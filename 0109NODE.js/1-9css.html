@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css选择器</title>
+    
+   <style type="text/css">
+        div {
+            height: 800px;
+            background-color : rgb(196, 169, 169);
+        }
+        /* #div1 {
+            height: 100px;
+            background: seagreen;
+        }
+        #div2 {
+            height: 100px;
+            background: rgb(139, 46, 123);
+        } */
+        .div1_class >p >button {
+            background: red;
+        }
+        .div2_class >p >button {
+            background: black;
+        }
+        /* div3,.p3>button {
+            background: pink;
+        } */
+    </style> 
+    <!-- <link type="text/css" rel="stylesheet"href="1-9css.css"> -->
+
+</head>
+<body>
+    <div id="div1" class="div1_class">
+        <p>
+            <button>提交</button>
+        </p>
+    </div>
+    <div id="div2" class="div2_class">
+        <p>
+            <button>提交</button>
+        </p>
+    </div>
+</br>
+    <div id="div3" class="div3_class">
+        div3
+    </div>
+    <p id="p3" class="p3_class">
+        <button>button3</button>
+    </p>
+</body>
+</html>

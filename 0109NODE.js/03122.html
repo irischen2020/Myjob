@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <script src="vue/vue.js"></script>
+    <script src="vue/axios.min.js"></script>
+
+
+    <div id="app">
+        欢迎你,{{name}}
+
+        <input name="username" type="text" v-model="name" @blur="f">
+
+        <ul>
+            <li v-for="i in 5">
+                <span v-if="i%2!=0">{{i}}</span>
+                <span style="color:red" v-else>{{i}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                name: "ccc",
+                url: "www.baidu.com"
+            },
+            methods: {
+                f: function () {
+                    console.log("blur验证用户是否存在")
+                }
+            },
+            created() {
+                console.log(this.url);
+            },
+            mounted() {
+                //onload 页面挂载完毕
+                console.log("页面挂载完毕");
+                //发出一个GET请求,括号中换成请求的地址
+                axios.get('/user')
+                    .then(function (response) {
+                        console.log(response.data);
+                    })
+            }
+        }
+
+        );
+    </script>
+</body>
+
+</html>
