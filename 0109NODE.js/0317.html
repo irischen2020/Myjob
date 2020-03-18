@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script src="vue/vue.js"></script>
+    <script src="vue/axios.min.js"></script>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{},
+            methods: {
+                //将JSON转成用&符号连接的字符串
+                toParams(param){
+                    var result = ""
+                    for(let name in param){
+                        if(typeof param[name] != 'function'){
+                            result += "&" + name + "=" + encodeURI(param[name])
+                        }
+                    }
+                    return result.substring(1)
+                },                
+                requestAjax(){
+                    let params = {"act":"login","username":"zs","userpwd":"666"};
+                    alert(this.toParams(params));
+                    //AXIOS POST请求  登录参数
+                    axios.post("http://localhost:9000/demoo/userServlet",params)
+             .then(response => {
+                        let jsonstr = response.data;
+                        alert(jsonstr);
+                    })
+                }
+            },
+            created () {
+                this.requestAjax();
+            },
+            mounted () {
+                
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>
