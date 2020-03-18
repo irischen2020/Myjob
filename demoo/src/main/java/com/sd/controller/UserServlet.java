@@ -52,10 +52,14 @@ public class UserServlet extends HttpServlet {
 			request.getSession().setAttribute("username",username);
 			
 			//从一个控制层方法跳到另一个控制层方法
-			request.getRequestDispatcher("userServlet?act=findall").forward(request,response);
+//			request.getRequestDispatcher("userServlet?act=findall").forward(request,response);
 			
 			//从SERVLET跳到JSP
 //			request.getRequestDispatcher("index.jsp").forward(request, response);
+			
+			//登录成功，返回一个JSON格式字符串
+			String jsonstr = "{status:200,message:\"OK\"}";
+			response.getWriter().print(jsonstr);
 		} else {
 			//重定向
 			response.sendRedirect("login.jsp?msg=error");
