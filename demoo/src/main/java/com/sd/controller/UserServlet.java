@@ -58,7 +58,7 @@ public class UserServlet extends HttpServlet {
 //			request.getRequestDispatcher("index.jsp").forward(request, response);
 			
 			//登录成功，返回一个JSON格式字符串
-			String jsonstr = "{status:200,message:\"OK\"}";
+			String jsonstr = "{status:100,message:\"OK\"}";
 			response.getWriter().print(jsonstr);
 			
 		} else {
