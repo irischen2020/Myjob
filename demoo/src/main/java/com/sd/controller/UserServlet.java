@@ -60,6 +60,7 @@ public class UserServlet extends HttpServlet {
 			//登录成功，返回一个JSON格式字符串
 			String jsonstr = "{status:200,message:\"OK\"}";
 			response.getWriter().print(jsonstr);
+			
 		} else {
 			//重定向
 			response.sendRedirect("login.jsp?msg=error");
