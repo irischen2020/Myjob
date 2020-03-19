@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: servlet-api-2.5.jar jstl.jar standard.jar taglibs-standard
+ -jstlel-1.2.5.jar activation-1.1.jar jstl-api-1.2.jar taglibs-standar
+ d-spec-1.2.5.jar taglibs-standard-impl-1.2.5.jar javax.mail-1.6.2.jar
+  javaee-api-8.0.1.jar jsp-api-2.1.jar
+Main-Class: 
+
