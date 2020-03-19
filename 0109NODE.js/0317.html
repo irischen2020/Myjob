@@ -13,6 +13,7 @@
     </div>
     <script src="vue/vue.js"></script>
     <script src="vue/axios.min.js"></script>
+    <script src="vue/qs.min.js"></script>
 
     <script>
         new Vue({
@@ -32,11 +33,15 @@
                 requestAjax(){
                     let params = {"act":"login","username":"zs","userpwd":"666"};
                     alert(this.toParams(params));
+                    var paramss = this.toParams(params);
+                 
                     //AXIOS POST请求  登录参数
-                    axios.post("http://localhost:9000/demoo/userServlet",params)
+                    axios.post("http://localhost:9000/demoo/userServlet",paramss)
              .then(response => {
                         let jsonstr = response.data;
                         alert(jsonstr);
+                        // console.log(response);
+                        
                     })
                 }
             },
