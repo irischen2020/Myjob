@@ -4,3 +4,26 @@
 2020/03/19 16:55:27 [notice] 17692#20532: signal process started
 2020/03/19 16:56:09 [notice] 20388#19332: signal process started
 2020/03/19 16:59:45 [error] 19384#12664: *2 CreateFile() "F:/Myjob/UI/api/showApiUnderProject" failed (3: FormatMessage() error:(15100)), client: 127.0.0.1, server: www.testdev000.org, request: "POST /lemon/api/showApiUnderProject?projectId=4 HTTP/1.1", host: "localhost", referrer: "http://localhost/lemon/html/apiList.html"
+2020/03/20 14:21:28 [notice] 21392#13820: signal process started
+2020/03/20 14:47:20 [error] 6888#19160: *3 connect() failed (10061: FormatMessage() error:(15100)) while connecting to upstream, client: 127.0.0.1, server: admin.ck000.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://127.0.0.1:8080/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:47:21 [error] 6888#19160: *3 connect() failed (10061: FormatMessage() error:(15105)) while connecting to upstream, client: 127.0.0.1, server: admin.ck000.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://[::1]:8080/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:47:21 [error] 6888#19160: *3 no live upstreams while connecting to upstream, client: 127.0.0.1, server: admin.ck000.org, request: "GET /favicon.ico HTTP/1.1", upstream: "http://localhost/favicon.ico", host: "www.ck000.org", referrer: "http://www.ck000.org/lemon/html/login.html"
+2020/03/20 14:53:29 [warn] 12088#4744: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2020/03/20 14:53:29 [notice] 12088#4744: signal process started
+2020/03/20 14:53:29 [warn] 13240#7176: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2020/03/20 14:54:21 [notice] 16620#14900: signal process started
+2020/03/20 14:54:28 [error] 5188#23372: *7 connect() failed (10061: FormatMessage() error:(15100)) while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://[::1]:8080/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:54:29 [error] 5188#23372: *7 connect() failed (10061: FormatMessage() error:(15105)) while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://127.0.0.1:8080/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:54:29 [error] 5188#23372: *7 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /favicon.ico HTTP/1.1", upstream: "http://localhost/favicon.ico", host: "www.ck000.org", referrer: "http://www.ck000.org/lemon/html/login.html"
+2020/03/20 14:54:31 [error] 5188#23372: *7 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://localhost/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:54:31 [error] 5188#23372: *7 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /favicon.ico HTTP/1.1", upstream: "http://localhost/favicon.ico", host: "www.ck000.org", referrer: "http://www.ck000.org/lemon/html/login.html"
+2020/03/20 14:54:33 [error] 5188#23372: *7 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /lemon/html/login.html HTTP/1.1", upstream: "http://localhost/lemon/html/login.html", host: "www.ck000.org"
+2020/03/20 14:54:33 [error] 5188#23372: *7 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /favicon.ico HTTP/1.1", upstream: "http://localhost/favicon.ico", host: "www.ck000.org", referrer: "http://www.ck000.org/lemon/html/login.html"
+2020/03/20 14:54:53 [error] 5188#23372: *11 connect() failed (10061: FormatMessage() error:(15105)) while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /image/1.jpg HTTP/1.1", upstream: "http://127.0.0.1:8080/image/1.jpg", host: "www.adminck.org"
+2020/03/20 14:54:54 [error] 5188#23372: *11 connect() failed (10061: FormatMessage() error:(15105)) while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /image/1.jpg HTTP/1.1", upstream: "http://[::1]:8080/image/1.jpg", host: "www.adminck.org"
+2020/03/20 14:54:54 [error] 5188#23372: *11 no live upstreams while connecting to upstream, client: 127.0.0.1, server: www.adminck.org, request: "GET /favicon.ico HTTP/1.1", upstream: "http://localhost/favicon.ico", host: "www.adminck.org", referrer: "http://www.adminck.org/image/1.jpg"
+2020/03/20 15:40:01 [notice] 21104#19452: signal process started
+2020/03/20 15:40:25 [notice] 12632#21724: signal process started
+2020/03/20 15:41:33 [notice] 14592#13560: signal process started
+2020/03/20 15:45:00 [notice] 23292#13568: signal process started
+2020/03/20 15:45:11 [error] 12540#19184: *93 CreateFile() "F:\Myjob\nginx-1.16.1/html/favicon.ico" failed (2: FormatMessage() error:(15100)), client: 127.0.0.1, server: www.ck000.org:, request: "GET /favicon.ico HTTP/1.1", host: "www.ck000.org:90", referrer: "http://www.ck000.org:90/lemon/html/login.html"
