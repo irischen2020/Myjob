@@ -1,143 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd337187-0506-4cce-8f2a-8932efcefde4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/font/adminthemes-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/font/adminthemes-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/font/adminthemes-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/add2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/arrow02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/arrow1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/arrow2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/collect1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/collect2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/copy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/delete2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/doubt1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/doubt2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/doubt3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/doubt4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/doubt5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/droparr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/dropbtm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/fail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/file1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/file2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/file3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/header2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/item_ic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/logo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/loudou.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/open2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/pass.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/person.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/person2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/plus1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/plus2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/quit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/set.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/srch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/wgx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/images/ygx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/nginx.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Myjob.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/alert.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/bootstrap/bootstrap-table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/bootstrap/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/bootstrap/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/jquery.mCustomScrollbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/css/validationEngine.jquery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/apiEdit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/apiList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/apiRun.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/apiView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/caseEdit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/caseList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/projectList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/projectSet.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/html/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/Particleground.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/apiEdit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/apiList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/apiRun.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/bootstrap-table-zh-CN.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/bootstrap-table.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/caseEdit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/caseList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/doT.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery-1.11.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery-validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.pagination.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.validationEngine-zh_CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.validationEngine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/jquery.validationEngine.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/layer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/projectList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UI/js/testAssemble.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/cktest.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cktest/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/fastcgi.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/fastcgi_params" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/koi-utf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/koi-win" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/mime.types" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/nginx.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/scgi_params" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/uwsgi_params" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/conf/win-utf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/geo2nginx.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/unicode2nginx/koi-utf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/unicode2nginx/unicode-to-nginx.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/unicode2nginx/win-utf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/vim/ftdetect/nginx.vim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/vim/ftplugin/nginx.vim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/vim/indent/nginx.vim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/contrib/vim/syntax/nginx.vim" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/CHANGES" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/CHANGES.ru" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/OpenSSL.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/PCRE.LICENCE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/docs/zlib.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/html/50x.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/html/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/logs/access.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/logs/error.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nginx-1.16.1/logs/nginx.pid" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/测开平台UI.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demoo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/demoo/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="cd337187-0506-4cce-8f2a-8932efcefde4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -314,12 +178,12 @@
       <option name="presentableId" value="Default" />
       <updated>1584669737261</updated>
       <workItem from="1584669743851" duration="11000" />
-      <workItem from="1584669812929" duration="385000" />
+      <workItem from="1584669812929" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396000" />
+    <option name="totallyTimeSpent" value="406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="181" y="121" width="1244" height="782" extended-state="0" />
