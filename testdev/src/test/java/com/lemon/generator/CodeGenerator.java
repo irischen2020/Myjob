@@ -55,6 +55,7 @@ public class CodeGenerator {
 		
 		// 自定义配置
 		InjectionConfig cfg = new InjectionConfig() {
+			
 			@Override
 			public void initMap() {
 				// to do nothing
