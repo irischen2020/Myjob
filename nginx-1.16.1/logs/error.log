@@ -1,0 +1,6 @@
+2020/03/19 16:35:23 [error] 6992#14092: *1 CreateFile() "F:\Myjob\nginx-1.16.1/html/favicon.ico" failed (2: FormatMessage() error:(15100)), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/03/19 16:50:51 [error] 15076#20904: *1 CreateFile() "F:/Myjob/测开平台UI/html/login.jsp" failed (2: FormatMessage() error:(15100)), client: 127.0.0.1, server: localhost, request: "GET /lemon/html/login.jsp HTTP/1.1", host: "localhost"
+2020/03/19 16:51:36 [error] 4544#13784: *1 CreateFile() "F:/Myjob/UI/html/login.jsp" failed (2: FormatMessage() error:(15100)), client: 127.0.0.1, server: localhost, request: "GET /lemon/html/login.jsp HTTP/1.1", host: "localhost"
+2020/03/19 16:55:27 [notice] 17692#20532: signal process started
+2020/03/19 16:56:09 [notice] 20388#19332: signal process started
+2020/03/19 16:59:45 [error] 19384#12664: *2 CreateFile() "F:/Myjob/UI/api/showApiUnderProject" failed (3: FormatMessage() error:(15100)), client: 127.0.0.1, server: www.testdev000.org, request: "POST /lemon/api/showApiUnderProject?projectId=4 HTTP/1.1", host: "localhost", referrer: "http://localhost/lemon/html/apiList.html"
