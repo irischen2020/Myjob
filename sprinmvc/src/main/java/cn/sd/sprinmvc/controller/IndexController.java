@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -65,6 +66,27 @@ public class IndexController {
 	public void testJsp2Mvcc2(User user){
 		System.out.println("===username:" + user.getUserName());
 		System.out.println("===username:" + user.getAge());
+	}
+	
+	//控制器返回的数据注入到前台页面
+//	第一种方式：通过ModelAndView。
+	@RequestMapping("/testMV")
+	public ModelAndView testMV(){
+		ModelAndView mv = new ModelAndView();
+//		//注入字符串
+//		mv.addObject("name","xiaobai");
+//		注入对象
+		User user = new User();
+		user.setId(1);
+		user.setUserName("dabai");
+		user.setAge(12);
+		mv.addObject("user",user);
+		
+		//注入LIST或MAP集合
+		
+		
+		mv.setViewName("success");
+		return mv;
 	}
 	
 }

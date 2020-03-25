@@ -1,14 +1,14 @@
 package cn.sd.sprinmvc.dao;
 
 public class User {
-	private String id;
+	private int id;
 	private String userName;
 	private int age;
 	
 	public User() {
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	
@@ -20,7 +20,7 @@ public class User {
 		return age;
 	}
 	
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

@@ -12,5 +12,6 @@
 </head>
 <body>
 成功跳转了
+name:${requestScope.user}
 </body>
 </html>
