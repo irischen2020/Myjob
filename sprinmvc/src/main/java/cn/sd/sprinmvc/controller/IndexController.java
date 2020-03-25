@@ -1,5 +1,6 @@
 package cn.sd.sprinmvc.controller;
 
+import cn.sd.sprinmvc.dao.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,9 +54,17 @@ public class IndexController {
 	
 	//	第二种方法：参数映射
 	@RequestMapping(value = "/testjsp2mvcc", method = RequestMethod.POST)
-	public void testjsp2mvcc(@RequestParam String username, @RequestParam String password, @RequestParam int age) {
+	public void testJsp2Mvcc(@RequestParam String username, @RequestParam String password, @RequestParam int age) {
 		System.out.println("===username:" + username);
 		System.out.println("===password:" + password);
 		System.out.println("===age:" + age);
 	}
+	
+	//第三种方法：直接封装成对象  用得最多
+	@RequestMapping("/testjsp2mvcc2")
+	public void testJsp2Mvcc2(User user){
+		System.out.println("===username:" + user.getUserName());
+		System.out.println("===username:" + user.getAge());
+	}
+	
 }
