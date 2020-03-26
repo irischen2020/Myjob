@@ -1,4 +1,4 @@
-package cn.sd.sprinmvc.dao;
+package cn.sd.sprinmvc.model;
 
 public class User {
 	private int id;
