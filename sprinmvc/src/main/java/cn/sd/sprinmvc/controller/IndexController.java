@@ -141,7 +141,7 @@ public class IndexController {
 		return "success";
 	}
 	
-	
+//	ModelAttribute注解，会在其它所有方法执行之前先执行一次。
 	@ModelAttribute
 	private void testModelAttribute(){
 		System.out.println("ModelAttribute runs");
