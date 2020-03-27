@@ -23,4 +23,16 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+
+
+    <!--将指定的POST请求，转变为需要的PUT或DELETE请求，这个过滤器的作用-->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
