@@ -6,25 +6,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class Index2Controller {
-	
-	@RequestMapping(value="/testGet",method = RequestMethod.GET)
-	public String testGet(){
-		return "success";
-	}
-	
-	@RequestMapping(value="/testPost",method = RequestMethod.POST)
-	public String testPost(){
-		return "success";
-	}
-	
-	@RequestMapping(value="/testPut",method = RequestMethod.PUT)
-	public String testPut(){
-		return "success";
-	}
-	
-	@RequestMapping(value="/testGet",method = RequestMethod.DELETE)
-	public String testDelete(){
-		return "success";
-	}
+//    @RequestMapping(value = "/index")
+//    public void testIndex() {
+//		System.out.println("index page ");
+//    }
+
+    @RequestMapping(value = "/testGet", method = RequestMethod.GET)
+    public String testGet() {
+        return "success";
+    }
+
+    @RequestMapping(value = "/testPost", method = RequestMethod.POST)
+    public String testPost() {
+        return "success";
+    }
+
+    @RequestMapping(value = "/testPut", method = RequestMethod.PUT)
+    public String testPut() {
+        System.out.println("testPut method runs");
+        return "redirect:/index";
+    }
+
+    @RequestMapping(value = "/testDelete", method = RequestMethod.DELETE)
+    public String testDelete() {
+        return "redirect:/index";
+    }
 
 }
