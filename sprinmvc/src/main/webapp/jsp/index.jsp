@@ -28,7 +28,7 @@
 <a href="${pageContext.request.contextPath}/testGet">test Get</a>
 
 <form action="${pageContext.request.contextPath}/testPut" method = "post">
-    <input type="hidden" name = "_method" value = "delete">
+    <input type="hidden" name = "_method" value = "put">
     <input type="text" name = "username"/>
     <input type="text" name = "password"/>
     <input type="submit" value = "提交">
