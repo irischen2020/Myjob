@@ -144,11 +144,12 @@ public class IndexController {
 	
 	@ModelAttribute
 	private void testModelAttribute(){
-		System.out.println("ModelAttribute 标注的方法实现了");
+		System.out.println("ModelAttribute runs");
 	}
-	@RequestMapping
+	@RequestMapping("/testma")
 	public String testma(){
-		return "testma";
+		System.out.println("testma runs");
+		return "test";
 	}
 	
 	
