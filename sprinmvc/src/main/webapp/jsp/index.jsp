@@ -11,7 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-这里是首页
+
+<h4>这里是index首页</h4>
+
+<a href = "${pageContext.request.contextPath}/testGet">test Get</a>
+
+
+
 <form action="${pageContext.request.contextPath}/testjsp2mvcc2" method="post">
     用户名：<input type="text" value="" name="userName">
     <br/><br/>
