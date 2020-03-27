@@ -1,17 +1,26 @@
 package cn.sd.sprinmvc.controller;
 
-import cn.sd.sprinmvc.dao.User;
+import cn.sd.sprinmvc.model.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+/**
+ * @SessionAttributes:会在处理方法testMV2中的model.addAttribute("name2","hahaha");
+ * 这个方法把键值对放进了model，把model里面的数据，最终放入REQUEST域。
+ * SessionAttributes会将键值对放进REQUEST域的同时，将这个键值对的一个副本同时放入HttpSession的域空间里
+ */
+//@SessionAttributes(value={"name2","user2"})
+//@SessionAttributes(types = {User.class,String.class})   types根据类型来还未实现
 @Controller
 public class IndexController {
 	
@@ -63,7 +72,7 @@ public class IndexController {
 	
 	//第三种方法：直接封装成对象  用得最多
 	@RequestMapping("/testjsp2mvcc2")
-	public void testJsp2Mvcc2(User user){
+	public void testJsp2Mvcc2(User user) {
 		System.out.println("===username:" + user.getUserName());
 		System.out.println("===username:" + user.getAge());
 	}
@@ -71,22 +80,82 @@ public class IndexController {
 	//控制器返回的数据注入到前台页面
 //	第一种方式：通过ModelAndView。
 	@RequestMapping("/testMV")
-	public ModelAndView testMV(){
+	public ModelAndView testMV() {
 		ModelAndView mv = new ModelAndView();
-//		//注入字符串
-//		mv.addObject("name","xiaobai");
-//		注入对象
+		//注入字符串
+		mv.addObject("name", "xiaobai");
+		
+		//注入对象
 		User user = new User();
 		user.setId(1);
 		user.setUserName("dabai");
 		user.setAge(12);
-		mv.addObject("user",user);
+		mv.addObject("user", user);
 		
 		//注入LIST或MAP集合
+		User user1 = new User();
+		user1.setId(2);
+		user1.setUserName("xiaohei");
+		user1.setAge(10);
 		
+		List<User> userList = new ArrayList<User>();
+		userList.add(user);
+		userList.add(user1);
+		mv.addObject("userList",userList);
 		
+		//success为跳转到的页面的名称
 		mv.setViewName("success");
 		return mv;
+	}
+	
+	//	第二种方式：返回字符串。这种用得最多
+	@RequestMapping("/testMV2")
+	public String testMV2(Model model){
+		
+		//注入字符串
+		model.addAttribute("name2","hahaha");
+		
+		//注入LIST集合
+		User user1 = new User();
+		user1.setId(1);
+		user1.setUserName("dabai");
+		user1.setAge(12);
+
+		User user2 = new User();
+		user2.setId(2);
+		user2.setUserName("xiaohei");
+		user2.setAge(10);
+		
+		List<User> userList = new ArrayList<User>();
+		userList.add(user1);
+		userList.add(user2);
+		
+		model.addAttribute("userList",userList);
+		
+		//注入MAP
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("user1",user1);
+		map.put("user2",user2);
+		model.addAttribute("map",map);
+		
+		return "success";
+	}
+	
+//	ModelAttribute注解，会在其它所有方法执行之前先执行一次。
+	@ModelAttribute
+	private void testModelAttribute(){
+		System.out.println("ModelAttribute runs");
+	}
+	@RequestMapping("/testma")
+	public String testma(){
+		System.out.println("testma runs");
+		return "test";
+	}
+	
+	//	在CONTROLLER里面重定向
+	@RequestMapping("/testredirect")
+	public String testRedirect(){
+		return "redirect:/test";
 	}
 	
 }

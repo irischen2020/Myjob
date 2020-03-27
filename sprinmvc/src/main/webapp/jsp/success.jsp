@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -12,6 +13,21 @@
 </head>
 <body>
 成功跳转了
-name:${requestScope.user}
+name : ${requestScope.name}<br>
+user : ${requestScope.user}<br>
+userList : ${requestScope.userList}<br><br><br><br><br><br><br>
+
+
+name2 : ${requestScope.name2}<br>
+<%--map:${requestScope.map}<br><br><br><br><br>--%>
+
+<c:forEach var="item" items="${map}">
+    ${item.key} > ${item.value} <br>
+</c:forEach><br><br><br><br><br><br>
+
+
+session:${sessionScope.name2}<br>
+session2:${sessionScope.user2}
+
 </body>
 </html>
