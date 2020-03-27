@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class IndexController {
@@ -63,7 +65,7 @@ public class IndexController {
 	
 	//第三种方法：直接封装成对象  用得最多
 	@RequestMapping("/testjsp2mvcc2")
-	public void testJsp2Mvcc2(User user){
+	public void testJsp2Mvcc2(User user) {
 		System.out.println("===username:" + user.getUserName());
 		System.out.println("===username:" + user.getAge());
 	}
@@ -71,20 +73,30 @@ public class IndexController {
 	//控制器返回的数据注入到前台页面
 //	第一种方式：通过ModelAndView。
 	@RequestMapping("/testMV")
-	public ModelAndView testMV(){
+	public ModelAndView testMV() {
 		ModelAndView mv = new ModelAndView();
-//		//注入字符串
-//		mv.addObject("name","xiaobai");
-//		注入对象
+		//注入字符串
+		mv.addObject("name", "xiaobai");
+		
+		//注入对象
 		User user = new User();
 		user.setId(1);
 		user.setUserName("dabai");
 		user.setAge(12);
-		mv.addObject("user",user);
+		mv.addObject("user", user);
 		
 		//注入LIST或MAP集合
+		User user1 = new User();
+		user1.setId(2);
+		user1.setUserName("xiaohei");
+		user1.setAge(10);
 		
+		List<User> userList = new ArrayList<User>();
+		userList.add(user);
+		userList.add(user1);
+		mv.addObject("userList",userList);
 		
+		//success为跳转到的页面的名称
 		mv.setViewName("success");
 		return mv;
 	}
