@@ -152,7 +152,6 @@ public class IndexController {
 		return "test";
 	}
 	
-	
 	//	在CONTROLLER里面重定向
 	@RequestMapping("/testredirect")
 	public String testRedirect(){
