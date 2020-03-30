@@ -14,10 +14,6 @@
 
 <h4>这里是index首页</h4>
 
-<a href = "${pageContext.request.contextPath}/testGet">test Get</a>
-
-
-
 <form action="${pageContext.request.contextPath}/testjsp2mvcc2" method="post">
     用户名：<input type="text" value="" name="userName">
     <br/><br/>
@@ -26,6 +22,16 @@
     年 龄：<input type="text" value="" name="age">
     <br/><br/>
     <input type="submit" value="提交">
+</form>
+<br><br><br><br><br><br><br><br>
+
+<a href="${pageContext.request.contextPath}/testGet">test Get</a>
+
+<form action="${pageContext.request.contextPath}/testPut" method = "post">
+    <input type="hidden" name = "_method" value = "put">
+    <input type="text" name = "username"/>
+    <input type="text" name = "password"/>
+    <input type="submit" value = "提交">
 </form>
 
 
