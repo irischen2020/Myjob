@@ -18,5 +18,6 @@ public class TestJdbc {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         DataSource dataSource = (DataSource) ctx.getBean("dataSource");
         System.out.println(dataSource.getConnection());
+        System.out.println("111111");
     }
 }
