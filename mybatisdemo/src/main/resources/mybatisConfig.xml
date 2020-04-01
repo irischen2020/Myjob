@@ -20,6 +20,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="cn/sd/mybatisdemo/model/UserMapper.xml"/>
+        <package name="cn.sd.mybatisdemo.mapper"/>
     </mappers>
 </configuration>
