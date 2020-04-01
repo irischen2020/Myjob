@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.sd.mybatisdemo.model">
-    <select id="selectOneUser" resultType="cn.sd.mybatisdemo.model.User">
+<mapper namespace="cn.sd.mybatisdemo.mapper.UserMapper">
+    <select id="getOneUserById" resultType="cn.sd.mybatisdemo.model.User">
         select * from sb_users where id = #{id}
     </select>
 </mapper>
