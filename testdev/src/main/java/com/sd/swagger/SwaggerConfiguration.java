@@ -26,7 +26,7 @@ public class SwaggerConfiguration {
                 .apiInfo(buildApiInfo())
                 .select()
                 // 指定package下的接口显示在接口文档中
-                .apis(RequestHandlerSelectors.basePackage("com.lemon.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.sd.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
