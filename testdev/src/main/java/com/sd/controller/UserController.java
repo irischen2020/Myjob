@@ -1,6 +1,7 @@
 package com.sd.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sd.common.Result;
 import com.sd.pojo.User;
 import com.sd.service.UserService;
@@ -46,9 +47,19 @@ public class UserController {
     
     //账号验重
     @RequestMapping("/find")
-    public Result find() {
-    
-        return null;
+    @ApiOperation(value = "账号验重方法",httpMethod = "POST")
+    public Result find(String username) {
+        Result result = null;
+    //调用业务层方法，查询DB中非主键列
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("username",username);
+        User user = userService.getOne(queryWrapper);
+        if(user == null){
+            new Result("1","账号不存在");
+        }else{
+            new Result("0","账号已存在");
+        }
+        return result;
     }
     
     @PostMapping("/login")
