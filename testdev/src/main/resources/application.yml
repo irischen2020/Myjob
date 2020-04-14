@@ -7,3 +7,9 @@ spring:
     url:
     username:
     password:
+
+logging:
+  level:
+    root: info
+    com.sd.mapper: trace
+
