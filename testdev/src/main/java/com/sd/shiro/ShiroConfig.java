@@ -56,12 +56,12 @@ public class ShiroConfig {
 		return securityManager;
 	}
 
-	/*@Bean
+	@Bean
 	public SessionManager sessionManager(){
 		CustomSessionManager manager = new CustomSessionManager();
 	        manager.setSessionDAO(new EnterpriseCacheSessionDAO());
 		return manager;
-	}*/
+	}
 
 
 
