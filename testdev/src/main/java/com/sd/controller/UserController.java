@@ -51,6 +51,7 @@ public class UserController {
     public Result find(String username) {
         Result result = null;
     //调用业务层方法，查询DB中非主键列
+        //QueryWrapper条件构造器
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("username",username);
         User user = userService.getOne(queryWrapper);
@@ -70,7 +71,9 @@ public class UserController {
             UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
-            result = new Result("1", "登录成功");
+            //将sessionId通过JSON返回给前端
+            String sessionId = (String) SecurityUtils.getSubject().getSession().getId();
+            result = new Result("1",sessionId, "登录成功");
         } catch (AuthenticationException e) {
             if (e instanceof UnknownAccountException) {
                 result = new Result("0", "用户名错误");
