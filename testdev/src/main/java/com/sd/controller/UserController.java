@@ -98,5 +98,13 @@ public class UserController {
 		return result;
 	}
 	
+	@GetMapping("/unauth")
+	@ApiOperation(value="未授权方法",httpMethod = "GET")
+	public Result unauth(){
+		Result result = null;
+		result = new Result("1", "账号未登录");
+		return result;
+	}
+	
 	
 }

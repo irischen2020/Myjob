@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d76e55ba-d6e0-47a6-aa3c-5af418756533" name="Default" comment="MyRealm">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sd/shiro/CustomSessionManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sd/handler/CorsConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../UI/html/login.html" afterPath="$PROJECT_DIR$/../UI/html/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../UI/html/projectList.html" afterPath="$PROJECT_DIR$/../UI/html/projectList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../UI/html/register.html" afterPath="$PROJECT_DIR$/../UI/html/register.html" />
@@ -13,11 +12,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sprinmvc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../sprinmvc/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sprinmvc/out/artifacts/sprinmvc_war_exploded/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../sprinmvc/out/artifacts/sprinmvc_war_exploded/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sd/handler/MyMetaObjectHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/sd/handler/MyMetaObjectHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sd/shiro/ShiroConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/sd/shiro/ShiroConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testdev.iml" afterPath="$PROJECT_DIR$/testdev.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,21 +24,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShiroConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShiroConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/shiro/ShiroConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="337">
+              <caret line="38" column="45" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CorsConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/handler/CorsConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="16" column="53" lean-forward="true" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="280">
+              <caret line="85" column="27" lean-forward="false" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -118,10 +123,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sd/shiro/MyRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sd/common/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sd/handler/MyMetaObjectHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sd/shiro/CustomSessionManager.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sd/shiro/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sd/handler/CorsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -257,6 +263,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Myjob\testdev\src\main\java\com\sd\handler" />
       <recent name="F:\Myjob\testdev\src\main\java\com\sd\shiro" />
     </key>
   </component>
@@ -371,7 +378,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586829315294</updated>
-      <workItem from="1586829325935" duration="10465000" />
+      <workItem from="1586829325935" duration="11533000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1586830989975</created>
@@ -401,11 +408,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586845043474</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="MyRealm">
+      <created>1586848191102</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586848191102</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10465000" />
+    <option name="totallyTimeSpent" value="11533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -493,14 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -517,10 +523,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/handler/CorsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="16" column="53" lean-forward="true" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/shiro/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="337">
+          <caret line="38" column="45" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sd/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="85" column="27" lean-forward="false" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
           <folding />
         </state>
       </provider>
