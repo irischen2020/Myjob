@@ -12,15 +12,18 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://192.168.1.232:3306/testdev"/>
-                <property name="username" value="reserve_all"/>
-                <property name="password" value="ca3@z6Yx"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
 
     <mappers>
-        <mapper resource="cn/sd/mybatisdemo/mapper/UserMapper.xml"/>
+        <!--加载映射文件，相对路径-->
+        <!--<mapper resource="cn/sd/mybatisdemo/mapper/UserMapper.xml"/>-->
+        <!--加载映射文件的方法：指定路径下所有映射文件，要求映射文件与映射文件所对应的接口名字相同-->
+        <package name="cn.sd.mybatisdemo.mapper"></package>
     </mappers>
 </configuration>

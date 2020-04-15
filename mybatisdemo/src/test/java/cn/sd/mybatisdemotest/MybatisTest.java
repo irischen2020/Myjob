@@ -1,5 +1,7 @@
-package cn.sd.mybatisdemo.Test;
+package cn.sd.mybatisdemotest;
 
+
+import cn.sd.mybatisdemo.mapper.UserMapper;
 import cn.sd.mybatisdemo.model.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +10,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 
 import static org.apache.ibatis.io.Resources.*;
 
@@ -22,8 +25,16 @@ public class MybatisTest {
 		SqlSession session = sqlSessionFactory.openSession();
 		//3:通过session操作数据库
 		try {
-			User user = session.selectOne("cn.sd.mybatisdemo.mapper.getOneUserById",1);
-			System.out.println(user);
+//			User user = session.selectOne("cn.sd.mybatisdemo.mapper.getOneUserById",2);
+//			System.out.println(user);
+			UserMapper mapper = session.getMapper(UserMapper.class);
+			System.out.println(mapper.getClass());
+//			User user = mapper.getOneUserById(1);
+//			System.out.println(user);
+			User user = new User("ccc","123",new Date());
+			mapper.insetUser(user);
+			session.commit();
+			System.out.println(user.getId());
 		}finally {
 			session.close();
 		}
