@@ -7,7 +7,6 @@ public class User {
 	private String username;
 	private String pasword;
 	private Date regDate;
-	int state;
 	
 	
 	public User() {
