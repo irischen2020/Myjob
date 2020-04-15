@@ -12,15 +12,15 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.1.232:3306/testdev"/>
+                <property name="username" value="reserve_all"/>
+                <property name="password" value="ca3@z6Yx"/>
             </dataSource>
         </environment>
     </environments>
 
     <mappers>
-        <package name="cn.sd.mybatisdemo.mapper"/>
+        <mapper resource="cn/sd/mybatisdemo/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>
