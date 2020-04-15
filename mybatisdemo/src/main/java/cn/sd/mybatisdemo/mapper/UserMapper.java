@@ -4,13 +4,15 @@ package cn.sd.mybatisdemo.mapper;
 import cn.sd.mybatisdemo.model.User;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface UserMapper {
 	/**
 	 * 通过ID获取一条用户信息
-	 * @param id
+	 * @param
 	 * @return
 	 */
-	public User getOneUserById(Integer id);
+	public List<User> getOneUserById(@Param("start_id") Integer start_id, @Param("end_id") Integer end_id);
 	
 	public void insetUser(User user);
 	

@@ -4,10 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.sd.mybatisdemo.mapper.UserMapper">
     <select id="getOneUserById" resultType="cn.sd.mybatisdemo.model.User">
-        select * from user where id=#{id}
+        select * from user where id &gt;=#{start_id} and id &lt;=#{end_id}
     </select>
     
-    <insert id="insetUser" useGeneratedKeys="true" keyProperty="id" >
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" >
         insert into
           user(username,password,regtime)
         values(#{username},#{password},#{regtime})

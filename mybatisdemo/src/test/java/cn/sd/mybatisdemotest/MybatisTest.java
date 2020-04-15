@@ -10,7 +10,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.apache.ibatis.io.Resources.*;
 
@@ -29,12 +31,13 @@ public class MybatisTest {
 //			System.out.println(user);
 			UserMapper mapper = session.getMapper(UserMapper.class);
 			System.out.println(mapper.getClass());
-//			User user = mapper.getOneUserById(1);
-//			System.out.println(user);
-			User user = new User("ccc","123",new Date());
-			mapper.insetUser(user);
-			session.commit();
-			System.out.println(user.getId());
+			List<User> list = new ArrayList<User>();
+			list = mapper.getOneUserById(1,6);
+			System.out.println(list);
+//			User user = new User("ccc","123",new Date());
+//			mapper.insertUser(user);
+//			session.commit();
+//			System.out.println(user.getId());
 		}finally {
 			session.close();
 		}
