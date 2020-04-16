@@ -12,7 +12,9 @@ public interface UserMapper {
 	 * @param
 	 * @return
 	 */
-	public List<User> getOneUserById(@Param("start_id") Integer start_id, @Param("end_id") Integer end_id);
+	public List<User> getUsersById(@Param("start_id") Integer start_id, @Param("end_id") Integer end_id);
+	
+	public User getOneUserById(Integer id);
 	
 	public void insetUser(User user);
 	

@@ -31,13 +31,18 @@ public class MybatisTest {
 //			System.out.println(user);
 			UserMapper mapper = session.getMapper(UserMapper.class);
 			System.out.println(mapper.getClass());
-			List<User> list = new ArrayList<User>();
-			list = mapper.getOneUserById(1,6);
-			System.out.println(list);
+			//查询
+//			List<User> list = new ArrayList<User>();
+//			list = mapper.getUsersById(1,6);
+//			System.out.println(list);
+			//新增
 //			User user = new User("ccc","123",new Date());
 //			mapper.insertUser(user);
 //			session.commit();
 //			System.out.println(user.getId());
+			//查询
+			User user = mapper.getOneUserById(1);
+			System.out.println(user);
 		}finally {
 			session.close();
 		}
