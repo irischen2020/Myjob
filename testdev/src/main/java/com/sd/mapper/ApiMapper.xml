@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sd.mapper.ApiMapper">
+
+    <!--resultMap的使用四：通过association标签来实现分步查询,用得比较多-->
+    <select id="getApisByclassid" resultType="api">
+    select *
+    from api
+    where api_classification_id = #{api_classification_id}
+    </select>
+
+</mapper>
