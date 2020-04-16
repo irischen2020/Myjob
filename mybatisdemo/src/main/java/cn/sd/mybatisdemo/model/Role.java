@@ -9,10 +9,12 @@ public class Role {
 	private int id;
 	private String roleName;
 	
+	private List<User> users;
+	
 	
 	public Role() {
 	}
-	
+
 	public Role(String roleName) {
 		this.roleName = roleName;
 	}

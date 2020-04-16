@@ -51,42 +51,42 @@
 
 
     <!--resultMap的使用三：通过association标签来实现关联查询,用得比较多-->
-    <!--<select id="getOneUserById" resultMap="user_rsm">-->
-        <!--select u.id,u.username,u.password,u.regtime,-->
-        <!--r.id rid,r.role_name-->
-        <!--from user u,role r-->
-        <!--where u.role_id = r.id-->
-        <!--and u.id = #{id}-->
-    <!--</select>-->
-    <!--<resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">-->
-        <!--<id property="id" column="id"/>-->
-        <!--<result property="username" column="username"/>-->
-        <!--<result property="password" column="password"/>-->
-        <!--<result property="regtime" column="regtime"/>-->
-    <!--&lt;!&ndash;以下是通过association标签来实现关联查询&ndash;&gt;-->
-        <!--<association property="role" javaType="cn.sd.mybatisdemo.model.Role">-->
-            <!--<id property="id" column="rid"/>-->
-            <!--<result property="roleName" column="role_name"/>-->
-        <!--</association>-->
-
-    <!--</resultMap>-->
-
-    <!--resultMap的使用四：通过association标签来实现分步查询,用得比较多-->
     <select id="getOneUserById" resultMap="user_rsm">
-        select *
-        from user u
-        where u.id = #{id}
+        select u.id,u.username,u.password,u.regtime,
+        r.id rid,r.role_name
+        from user u,role r
+        where u.role_id = r.id
+        and u.id = #{id}
     </select>
     <resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
         <result property="regtime" column="regtime"/>
-        <!--以下是通过association标签来实现关联查询-->
-        <association property="role" select ="cn.sd.mybatisdemo.mapper.RoleMapper.getOneRoleById" column="role_id">
+    <!--以下是通过association标签来实现关联查询-->
+        <association property="role" javaType="cn.sd.mybatisdemo.model.Role">
+            <id property="id" column="rid"/>
+            <result property="roleName" column="role_name"/>
         </association>
 
     </resultMap>
+
+    <!--resultMap的使用四：通过association标签来实现分步查询,用得比较多-->
+    <!--<select id="getOneUserById" resultMap="user_rsm">-->
+        <!--select *-->
+        <!--from user u-->
+        <!--where u.id = #{id}-->
+    <!--</select>-->
+    <!--<resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="username" column="username"/>-->
+        <!--<result property="password" column="password"/>-->
+        <!--<result property="regtime" column="regtime"/>-->
+        <!--&lt;!&ndash;以下是通过association标签来实现关联查询&ndash;&gt;-->
+        <!--<association property="role" select ="cn.sd.mybatisdemo.mapper.RoleMapper.getOneRoleById" column="role_id">-->
+        <!--</association>-->
+
+    <!--</resultMap>-->
 
 
 

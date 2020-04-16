@@ -1,7 +1,9 @@
 package cn.sd.mybatisdemotest;
 
 
+import cn.sd.mybatisdemo.mapper.RoleMapper;
 import cn.sd.mybatisdemo.mapper.UserMapper;
+import cn.sd.mybatisdemo.model.Role;
 import cn.sd.mybatisdemo.model.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -43,6 +45,11 @@ public class MybatisTest {
 			//查询
 			User user = mapper.getOneUserById(1);
 			System.out.println(user);
+			
+			//查询ROLE中对应的USERS
+//			RoleMapper roleMapper = session.getMapper(RoleMapper.class);
+//			Role role = roleMapper.getUsersById(3);
+//			System.out.println(role);
 		}finally {
 			session.close();
 		}

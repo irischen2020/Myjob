@@ -6,4 +6,20 @@
     <select id="getOneRoleById" resultType="cn.sd.mybatisdemo.model.Role">
         select * from role where id =#{id}
     </select>
+
+    <select id="getUsersById" resultMap="res_users">
+      select r.id,r.role_name,u.id uid,u.username uname
+      from role r,user u
+      where r.id = u.role_id
+      and r.id = #{id}
+    </select>
+    <resultMap id="res_users" type="cn.sd.mybatisdemo.model.Role">
+        <id property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+    <!--以下是通过collection标签来实现关联查询-关联的是一个LIST集合，之前USER关联的是一个ROLE对象-->
+        <collection property="users" ofType="cn.sd.mybatisdemo.model.User">
+            <id property="id" column="uid"/>
+            <result property="username" column="uname"/>
+        </collection>
+    </resultMap>
 </mapper>
