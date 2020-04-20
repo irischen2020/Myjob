@@ -33,7 +33,7 @@ function checkEmail(){
 	var checkRepeatUrl = lemon.config.global.rootUrl + "/user/find";
 	var isAlreadyRegisterUser = false;
 	$.ajax({
-		type : "POST",
+		type : "GET",
 		url : checkRepeatUrl,
 		data : {
 			username:username
@@ -41,11 +41,10 @@ function checkEmail(){
 		dataType:'json',
 		async:false,
 		success : function(ret) {
-			if(ret.isSuccess=="1"){
+			if(ret.status=="0"){
 				//找到此用户名的用户
-				if(ret.data!=null){
-					isAlreadyRegisterUser = true;
-				}
+				isAlreadyRegisterUser = true;
+				
 			}
 		}
 	});

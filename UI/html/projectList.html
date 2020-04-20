@@ -37,7 +37,7 @@
                         <a href="#">个人中心</a>
                     </li>
                     <li class="quit-top">
-                        <a href="/lemon/user/logout">退出</a>
+                        <a href="javascript:logout()">退出</a>
                     </li>
                 </ul>
             </div>
@@ -50,23 +50,15 @@
         <div class="right-interlist item_main">
             <div class="desc-interlist">
                 <div class="desctop-interlist desctop_box">
-                    <div class="desctit-interlist f-l">个人空间 分组共 <span>(1)</span> 个项目</div>
+                    <div class="desctit-interlist f-l">个人空间 分组共 <span>{{info.length}}</span> 个项目</div>
                     <a href="javascript:;" class="btn-addinter2 btn-com f-r">添加项目</a>
                 </div>
                 <h3 class="item_title">我的项目</h3>
                 <div class="item_body">
-                	 <a class="item_single" href="index.html">
+                	 <div class="item_single" v-for="project in info">
                        <span class="item_ic"></span>
-                       <span class="item_font">前程贷</span>
-                   	 </a>
-                	 <a class="item_single" href="index.html">
-                       <span class="item_ic"></span>
-                       <span class="item_font">bb</span>
-                   	 </a>
-                	 <a class="item_single" href="index.html">
-                       <span class="item_ic"></span>
-                       <span class="item_font">q</span>
-                   	 </a>
+                       <span class="item_font">{{project.name}}</span>
+                     </div>
                 </div>
             </div>
         </div>
@@ -97,8 +89,9 @@
 <script type="text/javascript" src="/lemon/js/alert.js"></script>
 <script type="text/javascript" src="/lemon/js/base.js"></script>
 <script type="text/javascript" src="/lemon/js/jquery-validate.js"></script>
-<script type="text/javascript" src="/lemon/js/projectList.js"></script>
+
 <script type="text/javascript" src="/lemon/js/common.js"></script>
+<script type="text/javascript" src="/lemon/js/jquery.cookie.js" charset="UTF-8"></script>
 <script>
     $(function(){
         //高度计算
@@ -112,6 +105,52 @@
             calcHeight();
         }
     })
+
+    function logout(){
+        let sessionId = $.cookie("sessionId");
+        //异步请求后端
+        $.ajax({
+            headers:{"Authorization":sessionId},
+            url:lemon.config.global.admin + "/user/logout",
+            type:"GET",
+            success:function(ret){
+                if(ret.status==1&&ret.message=="账号未登录"){
+                    location.href = lemon.config.global.rootUrl + "html/login.html";
+                }
+            }
+        })
+    }
 </script>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+    var myvue = new Vue({
+        el:".desc-interlist",
+        data:{
+            info:[]
+        },
+        methods: {
+            
+        },
+        created () {
+            let url = lemon.config.global.admin = "/project/toList";
+            let userId = sessionStorage.getItem("userId");
+            axois.get(url,{
+                headers:{"Authorization":$.cookie("sessionId")},
+                params:{"userId":userId}
+            }).then(response=>{
+                let result = response.data;
+                if(result.staus==1&&result.data!=null){
+                    console.log(result.data);
+                    this.info = result.data;
+                }else{
+                    location.href = lemon.config.global.rootUrl + "/html/login.html";
+                }
+            })
+        }
+    })
+</script>
+
+<script type="text/javascript" src="/lemon/js/projectList.js"></script>
 </body>
 </html>

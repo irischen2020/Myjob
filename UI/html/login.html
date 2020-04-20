@@ -52,19 +52,24 @@ canvas {
 						return false;
 					}
 					$(".tips_dd_init").hide();
-					$.post(lemon.config.global.rootUrl + "/user/login", {
+					$.post(lemon.config.global.admin + "/user/login", {
 						username : un,
 						password : $.md5(pd)
 					}, function(ret) {
-						if (ret != null && ret.code == "1001") {
+						if (ret != null && ret.status == "1") {
 							var date = new Date();
-							date.setTime(date.getTime() + 30 * 24 * 60 * 60
-									* 1000);//1个月
-							$.cookie("un", $("[name='username']").val(), {
+							date.setTime(date.getTime() + 24 * 60 * 60
+									* 1000);//1天
+							//将后端返回的sessionId写入COOKIE
+							$.cookie("sessionId", ret.message, {
 								expires : date
 							});
+							let userId = ret.data;
+							//前端存储，存储userId
+							sessionStorage.setItem("userId",userId);
+
 							window.location.href = lemon.config.global.rootUrl
-									+ "/project/tolist";
+									+ "/html/projectList.html";
 						} else {
 							$(".tips_dd_init").show();
 							$("p.tips").html(ret.message);

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sd.mybatisdemo.mapper.UserMapper">
+    <select id="getUsersById" resultType="cn.sd.mybatisdemo.model.User">
+        select * from user where id &gt;=#{start_id} and id &lt;=#{end_id}
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" >
+        insert into
+          user(username,password,regtime)
+        values(#{username},#{password},#{regtime})
+    </insert>
+
+    <delete id="deleteUser">
+        delete from user
+          where id=#{id}
+    </delete>
+
+    <update id="updateUser">
+        update user
+        set username = #{username},password=#{password},regtime=#{regtime}
+        where id=#{id}
+    </update>
+
+    <!--resultMap的使用一：使用resultMap自定义数据库字段名称和JAVABEAN的属性名称的对应关系-->
+    <!--<select id="getOneUserById" resultMap="user_rsm">-->
+        <!--select * from user where id = #{id}-->
+    <!--</select>-->
+    <!--<resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="password" column="password"/>-->
+    <!--</resultMap>-->
+
+    <!--resultMap的使用二：使用resultMap实现关联查询,通过级联查询,很少用-->
+    <!--<select id="getOneUserById" resultMap="user_rsm">-->
+        <!--select u.id,u.username,u.password,u.regtime,-->
+        <!--r.id rid,r.role_name-->
+         <!--from user u,role r-->
+         <!--where u.role_id = r.id-->
+         <!--and u.id = #{id}-->
+    <!--</select>-->
+    <!--<resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="password" column="password"/>-->
+    <!--以下是通过级联的方式查询-->
+        <!--<result property="role.id" column="rid"/>-->
+        <!--<result property="role.roleName" column="role_name"/>-->
+    <!--</resultMap>-->
+
+
+    <!--resultMap的使用三：通过association标签来实现关联查询,用得比较多-->
+    <select id="getOneUserById" resultMap="user_rsm">
+        select u.id,u.username,u.password,u.regtime,
+        r.id rid,r.role_name
+        from user u,role r
+        where u.role_id = r.id
+        and u.id = #{id}
+    </select>
+    <resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="regtime" column="regtime"/>
+    <!--以下是通过association标签来实现关联查询-->
+        <association property="role" javaType="cn.sd.mybatisdemo.model.Role">
+            <id property="id" column="rid"/>
+            <result property="roleName" column="role_name"/>
+        </association>
+
+    </resultMap>
+
+    <!--resultMap的使用四：通过association标签来实现分步查询,用得比较多-->
+    <!--<select id="getOneUserById" resultMap="user_rsm">-->
+        <!--select *-->
+        <!--from user u-->
+        <!--where u.id = #{id}-->
+    <!--</select>-->
+    <!--<resultMap id="user_rsm" type="cn.sd.mybatisdemo.model.User">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="username" column="username"/>-->
+        <!--<result property="password" column="password"/>-->
+        <!--<result property="regtime" column="regtime"/>-->
+        <!--&lt;!&ndash;以下是通过association标签来实现关联查询&ndash;&gt;-->
+        <!--<association property="role" select ="cn.sd.mybatisdemo.mapper.RoleMapper.getOneRoleById" column="role_id">-->
+        <!--</association>-->
+
+    <!--</resultMap>-->
+
+
+
+</mapper>
+
+
+
