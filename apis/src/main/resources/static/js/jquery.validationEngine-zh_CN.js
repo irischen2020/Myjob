@@ -15,7 +15,7 @@
                     "func": function(field, rules, i, options){
                         return (field.val() == "test") ? true : false;
                     },
-                    "alertText": "* Field must equal test"
+                    "alertText": "* Field must equal ss"
                 },
                 "containToday": { 
                     "func": function(field, rules, i, options){
