@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 public interface UserMapper {
-	public void add(User user);
+	public void add(User user) throws Exception;
 }

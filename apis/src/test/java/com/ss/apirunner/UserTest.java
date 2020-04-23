@@ -18,7 +18,11 @@ public class UserTest {
 	
 	@Test
 	public void test() {
-		User user = new User("aa", "123456", "2020-04-23");
-		userMapper.add(user);
+		User user = new User("aaaa", "123456", "2020-04-23");
+		try {
+			userMapper.add(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
