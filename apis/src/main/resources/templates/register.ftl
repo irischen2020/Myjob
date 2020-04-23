@@ -33,7 +33,7 @@ function checkEmail(){
 	var checkRepeatUrl = lemon.config.global.rootUrl + "/user/find";
 	var isAlreadyRegisterUser = false;
 	$.ajax({
-		type : "GET",
+		type : "POST",
 		url : checkRepeatUrl,
 		data : {
 			username:username
