@@ -125,8 +125,8 @@ $(document).ready(function() {
 			success : function(result) {
 				if(result.isSuccess=="1"){
 					alert("注册成功");
-					window.location.href=lemon.config.global.htmlUrl
-							+ "/login.html";
+					window.location.href=lemon.config.global.rootUrl
+							+ "/user/toLogin";
 				}else{
 					$(".tips_dd_init").show();
 					$("p.tips").html(result.message);

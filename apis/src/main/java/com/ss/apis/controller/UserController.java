@@ -43,5 +43,12 @@ public class UserController {
 		return result;
 	}
 	
+	@RequestMapping(value = "/toLogin")
+	public ModelAndView toLogin(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("login");
+		return  modelAndView;
+	}
+	
 	
 }
