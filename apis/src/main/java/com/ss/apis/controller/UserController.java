@@ -33,11 +33,11 @@ public class UserController {
 		user.setRegtime(DateUtil.formatyy_ss(new Date()));
 		try {
 			userService.add(user);
-			new Result("1","注册成功");
+			result = new Result("1","注册成功");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			new Result("0","注册失败");
+			result = new Result("0","注册失败");
 		}
 		
 		return result;
