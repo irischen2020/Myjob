@@ -9,5 +9,9 @@
         values(#{username},#{password},#{regtime})
     </insert>
 
+    <select id="find" parameterType="user">
+        select * from user where username = #{user.username}
+    </select>
+
 </mapper>
 

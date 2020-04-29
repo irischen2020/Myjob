@@ -26,7 +26,7 @@ public class UserController {
 		modelAndView.setViewName("register");
 		return  modelAndView;
 	}
-	
+	//注册接口
 	@RequestMapping("/register")
 	public Result register(User user){
 		Result result = null;
@@ -42,7 +42,23 @@ public class UserController {
 		
 		return result;
 	}
-	
+	//用户名验重接口
+	@RequestMapping("/find")
+	public Result find(User user){
+		Result result = null;
+		
+		
+		try {
+			userService.add(user);
+			result = new Result("1","注册成功");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = new Result("0","注册失败");
+		}
+		
+		return result;
+	}
 	@RequestMapping(value = "/toLogin")
 	public ModelAndView toLogin(){
 		ModelAndView modelAndView = new ModelAndView();
