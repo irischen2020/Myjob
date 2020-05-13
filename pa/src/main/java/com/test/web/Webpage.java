@@ -68,7 +68,7 @@ public class Webpage {
 		//获取未处理过的源码
 		String htmlSource = getPageSource();
 		//定义正则表达式
-		final String pattern = "src=\"(.*)>";
+		final String pattern = "src=\"//([\\S]*)\"";
 		Pattern p = Pattern.compile(pattern,Pattern.MULTILINE);
 		Matcher m = p.matcher(htmlSource);
 		System.out.println("group:"+ m.groupCount());
