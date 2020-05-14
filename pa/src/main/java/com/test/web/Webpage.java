@@ -33,12 +33,10 @@ public class Webpage {
 		//构建一URL对象
 		try {
 			URL url = new URL(pageUrl);
-			
 			//获取网页的编码方式，这里可以解决乱码问题
 			HttpURLConnection uc = (HttpURLConnection) url.openConnection();
 			pageEncode = uc.getContentType();
 			pageEncode = pageEncode.substring(pageEncode.indexOf("charset=")+8).trim();
-			System.out.println(pageEncode);
 			
 			//使用openStream得到一输入流并由此构造一个BufferedReader对象
 			//整体意思就是用InputStreamReader这个中介把url.openStream()这个字节流转换成字符流BufferedReader
@@ -68,13 +66,14 @@ public class Webpage {
 		//获取未处理过的源码
 		String htmlSource = getPageSource();
 		//定义正则表达式
-		final String pattern = "src=\"//([\\S]*)\"";
-		Pattern p = Pattern.compile(pattern,Pattern.MULTILINE);
-		Matcher m = p.matcher(htmlSource);
+		final String pattern = "data-original=\"([\\S]*)\"";   //左右边界确定。中间括号内的是匹配除空格外的所有字符
+		Pattern p = Pattern.compile(pattern,Pattern.MULTILINE); //p对象是一个正则表达式的编译表示
+		Matcher m = p.matcher(htmlSource); //m对象是对输入字符串进行解释和匹配操作的引擎
 		System.out.println("group:"+ m.groupCount());
 //		return null;
 		while(m.find()){
 			strs.add(m.group());
+			System.out.println(strs);
 		}
 		System.out.println(strs);
 		return strs;
