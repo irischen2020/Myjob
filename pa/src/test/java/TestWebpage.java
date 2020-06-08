@@ -1,5 +1,4 @@
-import com.test.utils.StringsUtils;
-import com.test.web.Webpage;
+import com.test.leis.Webpage;
 import org.junit.Test;
 
 

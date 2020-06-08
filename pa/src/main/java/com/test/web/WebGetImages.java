@@ -1,11 +1,9 @@
 package com.test.web;
 
+import com.test.leis.Webpage;
 import com.test.utils.HttpGetImage;
 
 import java.net.URL;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class WebGetImages {
