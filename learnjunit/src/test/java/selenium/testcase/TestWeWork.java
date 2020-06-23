@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import selenium.pages.App;
 
-public class TestStartCase {
+public class TestWeWork {
 	
 	public static App app;
 	
@@ -19,7 +19,7 @@ public class TestStartCase {
 	}
 	
 	@Test
-	public void testStart() {
+	public void testAdd() {
 		String phonenumber = "13152698569";
 		app.toAddMember().AddMember(phonenumber, phonenumber, phonenumber);
 		
