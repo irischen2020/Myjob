@@ -36,6 +36,12 @@ public class TestWeWork {
 		app.toContact().toImportPage().importFormFile(filepath);
 	}
 	
+	//测试消息发送
+	@Test
+	public void testMessageSend(){
+		app.toMessageSend().send();
+	}
+	
 	@AfterClass
 	public static void afterAll() {
 	 	app.quite();
