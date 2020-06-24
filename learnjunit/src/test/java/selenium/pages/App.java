@@ -24,14 +24,23 @@ public class App extends BasePage {
 		return this;
 	}
 	
-	public  ContactPage toContact() {
+	//进入通讯录页面
+	public ContactPage toContact() {
 		findElement(By.linkText("通讯录")).click();
 		return new ContactPage();
 	}
 	
-	public  ContactPage toAddMember() {
+	//进入添加成员页面
+	public ContactPage toAddMember() {
 		findElement(By.linkText("添加成员")).click();
 		return new ContactPage();
 	}
-
+	
+	//进入消息群发页面
+	public MessageSendPage toMessageSend(){
+		findElement(By.cssSelector("#menu_manageTools")).click();
+		findElement(By.cssSelector("css=.js_show_SendMessage")).click();
+		return new MessageSendPage();
+		
+	}
 }
