@@ -17,7 +17,7 @@ public class TestWeWork {
 	//测试添加成员，并且添加以后将其删除
 	@Test
 	public void testAdd() {
-		String phonenumber = "13511111111";
+		String phonenumber = "13511111112";
 		app.toAddMember().addMember(phonenumber, phonenumber, phonenumber);
 		//添加完以后将刚刚添加的记录删除
 //		app.toContact().searchOneAndDelete(phonenumber);
@@ -38,12 +38,12 @@ public class TestWeWork {
 	
 	//测试消息发送
 	@Test
-	public void testMessageSend(){
+	public void testMessageSend() throws InterruptedException {
 		app.toMessageSend().send();
 	}
 	
-	@AfterClass
-	public static void afterAll() {
-	 	app.quite();
-	}
+//	@AfterClass
+//	public static void afterAll() {
+//	 	app.quite();
+//	}
 }

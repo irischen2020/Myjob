@@ -14,9 +14,9 @@ public class App extends BasePage {
 		//隐式等待
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://work.weixin.qq.com/");
-		driver.manage().addCookie(new Cookie("wwrtx.sid", "iA3OFT_hCudvuMl57KD3EMK8li9Z2CNDLJaQU7GLXMV2BFtGr8AUxGOGEUCCeP-P"));
+		driver.manage().addCookie(new Cookie("wwrtx.sid", "iA3OFT_hCudvuMl57KD3EJi_tYfGxbqARG4cpPhpeWOcoPoyIOBFPbA5QFX5Jrvw"));
 		driver.manage().addCookie(new Cookie("wwrtx.vst",
-				"gMzL8c_p92-Epeejv3q2CrrZWQaw2Lv9tkrQoNPd8qC6Df173lzQCdehQDzCJEOQoxQupk9DGbbcrFoAjgft2ernjH-K2UBxJ66ksy0a_jHGy1GAQfA2qK58-CY5tbzGTu5-JbVgAujguL7lWyBYmy7xUKCiceMAT7zsr-FrUPO2cfyt2FE4MHf8IN8J1pLuQSFmThD7GgKjEIWcGMvdgMz6SwABPNPgvGszHGUfenBVxAv9FbB-PXUk1fkbSmlh42YZYTXh1PuWKISjjNoinQ"));
+				"JNa81bvf29Xmsc_-c_-AnkOd0jmuX9Zk_tG2qQPmy1-pfdewIC7nFWddFxWpMimIutdINAlxF6GzI6BbEPiGZuDpoeTq2IkP2Ni8kKO-eWHWFRyQxMaduTE6ztLlapWKz9dt-CS8XAt22gyanuFic0_22Ce5q76rzHRE0UuS29AdFINcjsElcnmnnX38Hs743WPa6pPHtLwSf2QOtb3LtVUQ_RrC3NN7T8YyoVP9INpEoWEcPEjVGd0lWoS_Zx26LXJu-cti55LRVPQOqkEQWQ"));
 		
 		findElement(By.linkText("企业登录")).click();
 		//或者直接刷新
@@ -38,8 +38,10 @@ public class App extends BasePage {
 	
 	//进入消息群发页面
 	public MessageSendPage toMessageSend(){
+		//点击管理工具
 		findElement(By.cssSelector("#menu_manageTools")).click();
-		findElement(By.cssSelector("css=.js_show_SendMessage")).click();
+		//点击消息群发
+		findElement(By.cssSelector(".js_show_SendMessage")).click();
 		return new MessageSendPage();
 		
 	}
