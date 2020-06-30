@@ -2,7 +2,12 @@ package selenium.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class MessageSendPage extends BasePage {
 public MessageListPage send() throws InterruptedException {
@@ -29,22 +34,21 @@ public MessageListPage send() throws InterruptedException {
 	
 	//切换iframe,iframe id 是动态变化的,以ueditor_打头
 	driver.switchTo().frame(driver.findElement(By.xpath("//iframe[starts-with(@id, 'ueditor_')]")));
-
+	
 	//输入正文
 	findElement(By.cssSelector(".msg_noticeEditor_frameBody"),0).sendKeys("testarticle");
 	//切换回原来的窗体
 	driver.switchTo().defaultContent();
 	
+	
 	//	执行JS脚本,滚动窗口
 	JavascriptExecutor jsdriver = (JavascriptExecutor) driver;
-	jsdriver.executeScript("window.scrollTo(0,200)");
+	jsdriver.executeScript("window.scrollTo(0,800)");
 	
-	Thread.sleep(5000);
+	//点击摘要后的输入框,注意：这个框和后面输入内容的框不是同一个元素
+	findElement(By.cssSelector(".msg_edit_infoItem_textWord")).click();
 	//输入摘要
-	WebElement element = findElement(By.cssSelector(".qui_textarea"),0);
-	element.click();
-	Thread.sleep(2);
-	element.sendKeys("testsummary");
+	findElement(By.cssSelector(".qui_textarea"),0).sendKeys("testsummary");
 	
 	
 	//输入作者
