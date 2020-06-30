@@ -1,9 +1,11 @@
 package selenium.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class MessageSendPage extends BasePage {
-public void send() throws InterruptedException {
+public MessageListPage send() throws InterruptedException {
 	findElement(By.linkText("选择需要发消息的应用")).click();
 	findElement(By.cssSelector(".js_app_dlg_item .ww_bubble_cell:nth-child(2)"),0).click();
 	findElement(By.linkText("确定")).click();
@@ -18,10 +20,40 @@ public void send() throws InterruptedException {
 	findElement(By.cssSelector(".ww_searchResult_title_peopleDepartment")).click();
 	//滚动窗口
 //	执行JS脚本
-//	window.scrollTo(0,0);
+//	window.scrollTo(0,103);
 	//点击确认
 	findElement(By.linkText("确认")).click();
+	//点击输入标题
+	findElement(By.cssSelector(".ww_editorTitle")).sendKeys("testtitle");
+	Thread.sleep(3000);
 	
+	//切换iframe,iframe id 是动态变化的,以ueditor_打头
+	driver.switchTo().frame(driver.findElement(By.xpath("//iframe[starts-with(@id, 'ueditor_')]")));
+
+	//输入正文
+	findElement(By.cssSelector(".msg_noticeEditor_frameBody"),0).sendKeys("testarticle");
+	//切换回原来的窗体
+	driver.switchTo().defaultContent();
+	
+	//	执行JS脚本,滚动窗口
+	JavascriptExecutor jsdriver = (JavascriptExecutor) driver;
+	jsdriver.executeScript("window.scrollTo(0,200)");
+	
+	Thread.sleep(5000);
+	//输入摘要
+	WebElement element = findElement(By.cssSelector(".qui_textarea"),0);
+	element.click();
+	Thread.sleep(2);
+	element.sendKeys("testsummary");
+	
+	
+	//输入作者
+	findElement(By.cssSelector(".js_amrd_sendName")).sendKeys("testauthor");
+	//点击发送
+	findElement(By.linkText("发送")).click();
+	//弹框，点击确定
+	findElement(By.linkText("确定")).click();
+	return new MessageListPage();
 }
 }
 

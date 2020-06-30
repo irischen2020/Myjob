@@ -45,4 +45,14 @@ public class App extends BasePage {
 		return new MessageSendPage();
 		
 	}
+	//进入已发送页面
+	public MessageListPage toMessageListPage(){
+		//点击管理工具
+		findElement(By.cssSelector("#menu_manageTools")).click();
+		//点击消息群发
+		findElement(By.cssSelector(".js_show_SendMessage")).click();
+		//点击已发送
+		findElement(By.linkText("已发送"));
+		return new MessageListPage();
+	}
 }
