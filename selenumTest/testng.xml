@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="注册">
+     <classes>
+      <class name="com.sele.Register"/>
+    </classes>
+  </test>
+  <!-- 定义浏览器 -->
+  <parameter name="browserType" value="chrome"></parameter>
+  <!-- 定义驱动路径 -->
+  <parameter name="driverPath" value="src/test/resources/chromedriver.exe"></parameter>
+  <!-- 监听器作用，在测试套件执行过程中会去调用以下类监听 -->
+  <listeners>
+  <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+  <!--监听测试失败的用例并截图 -->
+  <listener class-name="com.listerner.ReportListener"></listener>
+  </listeners>
+</suite> 

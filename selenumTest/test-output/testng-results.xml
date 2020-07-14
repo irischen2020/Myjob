@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="7" failed="0" total="7" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1116" started-at="2018-11-06T03:19:54Z" finished-at="2018-11-06T03:19:55Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1116" started-at="2018-11-06T03:19:54Z" finished-at="2018-11-06T03:19:55Z">
+      <class name="com.sele.Register">
+        <test-method status="FAIL" signature="init(java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="init" is-config="true" duration-ms="0" started-at="2018-11-06T11:19:54Z" finished-at="2018-11-06T11:19:54Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browserType' is required by @Configuration on method init but has not been marked @Optional or defined
+in C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1780568110\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browserType' is required by @Configuration on method init but has not been marked @Optional or defined
+in C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1780568110\testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:358)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:199)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:277)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="4" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[用户名不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="1" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ss]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[非法的手机号]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="1" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15915859774]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[密码不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="1" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15915859774]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[密码长度至少为6位]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="1" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15915859774]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[重复密码不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register" duration-ms="0" started-at="2018-11-06T11:19:55Z" data-provider="getFail" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15915859774]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123457]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[密码不一致]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="SKIP" signature="register1(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sele.Register@581118e6]" name="register1" duration-ms="1" started-at="2018-11-06T11:19:55Z" data-provider="getSucess" finished-at="2018-11-06T11:19:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[15915859778]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register1 -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.sele.Register@581118e6]" name="tearDown" is-config="true" duration-ms="0" started-at="2018-11-06T11:19:55Z" finished-at="2018-11-06T11:19:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sele.Register -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

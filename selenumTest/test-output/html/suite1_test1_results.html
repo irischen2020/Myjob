@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - 注册</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>注册</h1>
+<p>
+  Test duration: 48.398s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr>
+    <th colspan="1" class="header failed">Failed Tests</th>
+    <th colspan="1" class="header failed">Duration</th>
+    <th colspan="1" class="header failed">Log Info</th>
+    <th colspan="1" class="header failed">Screen Shot</th>
+    
+    </tr>
+          <tr>
+        <td colspan="3" class="group">com.sele.Register</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  register1
+      </td>
+  <td class="duration">
+    30.912s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"15915859778", "123456", "123456"</span><br />
+    
+            <div class="testOutput">
+                        <br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [true] but found [false]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:494)<br />
+              org.testng.Assert.assertTrue(Assert.java:42)<br />
+              org.testng.Assert.assertTrue(Assert.java:52)<br />
+              com.sele.Register.register1(Register.java:49)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:601)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:335)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:330)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1149)<br />
+              org.testng.TestNG.run(TestNG.java:1057)<br />
+              org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)<br />
+                </div>
+      </td>
+  <td class="screenshot">
+											<div class="screenshotimage">
+																											&lt;img src=&apos;http://localhost:10080/screenshot\注册\2018-11-06\1541472874148.jpg&apos; width=&apos;100&apos; height=&apos;100&apos;&gt;&lt;a href=&apos;http://localhost:10080/screenshot\注册\2018-11-06\1541472874148.jpg&apos; target=&apos;_blank&apos;&gt;点击查看大图&lt;/a&gt;&lt;/img&gt;<br />
+																					</div>
+			  </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.sele.Register</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    0.581s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"15915859774", "123456", "", "重复密码不能为空"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    1.067s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"ss", "", "", "非法的手机号"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    0.567s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"15915859774", "123456", "123457", "密码不一致"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    5.660s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"", "", "", "用户名不能为空"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    0.888s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"15915859774", "", "", "密码不能为空"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+<tr>
+  <td class="method">
+                  register
+      </td>
+  <td class="duration">
+    0.552s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"15915859774", "123", "", "密码长度至少为6位"</span><br />
+    
+        
+
+      </td>
+  <td class="screenshot">
+						  </td>
+</tr>
+      </table>
+  
+</body>
+</html>
