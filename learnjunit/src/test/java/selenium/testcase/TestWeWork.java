@@ -3,7 +3,11 @@ package selenium.testcase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import selenium.pages.App;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestWeWork {
 	
@@ -14,11 +18,13 @@ public class TestWeWork {
 		app = new App();
 		app.loginWithCookie();
 	}
+	//实现参数化测试：
 	//测试添加成员，并且添加以后将其删除
-	@Test
-	public void testAdd() {
-		String phonenumber = "13511111112";
+	@ParameterizedTest
+	@ValueSource(strings = {"13100000000","13100001111","13100002222"})
+	public void testAdd(String phonenumber) {
 		app.toAddMember().addMember(phonenumber, phonenumber, phonenumber);
+//		assertThat()
 		//添加完以后将刚刚添加的记录删除
 //		app.toContact().searchOneAndDelete(phonenumber);
 		
@@ -40,6 +46,12 @@ public class TestWeWork {
 	@Test
 	public void testMessageSend() throws InterruptedException {
 		app.toMessageSend().send();
+	}
+	
+	//测试获取成员列表方法
+	@Test
+	public void testGetList(){
+		app.toContact().getMemberList();
 	}
 	
 //	@AfterClass

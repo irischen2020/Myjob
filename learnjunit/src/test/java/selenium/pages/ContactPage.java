@@ -1,6 +1,10 @@
 package selenium.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactPage extends BasePage {
 	//添加成员
@@ -11,6 +15,15 @@ public class ContactPage extends BasePage {
 		findElement(By.id("memberAdd_phone")).sendKeys(useraccount);
 		findElement(By.linkText("保存")).click();
 		return this;
+	}
+	
+	//查询出所有成员列表，用来后面做断言用
+	public void getMemberList(){
+		List<WebElement> elements = new ArrayList<WebElement>();
+		elements = driver.findElements(By.cssSelector(".member_colRight_memberTable_td:nth-child(2) > span"));
+		for (WebElement element:elements) {
+			System.out.println(element);
+		}
 	}
 	
 	//查询出某个成员然后删除
