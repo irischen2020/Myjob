@@ -17,13 +17,19 @@ public class ContactPage extends BasePage {
 		return this;
 	}
 	
-	//查询出所有成员列表，用来后面做断言用
-	public void getMemberList(){
+	//查询出所有成员，放入LIST集合，用来后面做断言用
+	public Iterable getMemberList(){
+		
+		List<String> listText = new ArrayList<String>();
 		List<WebElement> elements = new ArrayList<WebElement>();
 		elements = driver.findElements(By.cssSelector(".member_colRight_memberTable_td:nth-child(2) > span"));
 		for (WebElement element:elements) {
-			System.out.println(element);
+			String text = element.getText().toString();
+			System.out.println(text);
+			listText.add(text);
 		}
+		Iterable iter = listText;
+		return iter;
 	}
 	
 	//查询出某个成员然后删除
