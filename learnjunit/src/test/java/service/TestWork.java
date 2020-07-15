@@ -1,6 +1,7 @@
 package service;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
