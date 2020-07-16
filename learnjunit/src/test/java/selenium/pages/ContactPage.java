@@ -18,7 +18,7 @@ public class ContactPage extends BasePage {
 	}
 	
 	//查询出所有成员，放入LIST集合，用来后面做断言用
-	public Iterable getMemberList(){
+	public List<String> getMemberList(){
 		
 		List<String> listText = new ArrayList<String>();
 		List<WebElement> elements = new ArrayList<WebElement>();
@@ -28,8 +28,7 @@ public class ContactPage extends BasePage {
 			System.out.println(text);
 			listText.add(text);
 		}
-		Iterable iter = listText;
-		return iter;
+		return listText;
 	}
 	
 	//查询出某个成员然后删除

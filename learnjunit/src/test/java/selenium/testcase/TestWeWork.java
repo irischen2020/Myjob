@@ -1,5 +1,7 @@
 package selenium.testcase;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.hamcrest.Matcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -13,6 +15,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertThat;
 
+import net.sf.*;
 
 public class TestWeWork {
 	
@@ -23,24 +26,43 @@ public class TestWeWork {
 		app = new App();
 		app.loginWithCookie();
 	}
-	//实现参数化测试：
+	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
-	@Test
-//	@ParameterizedTest
-//	@ValueSource(strings = {"13100000000","13100001111","13100002222"})
-	public void testAdd(String phonenumber) {
+	@ParameterizedTest
+	@ValueSource(strings = {"test0716","test0716a","13100002222"})
+	public void testAddSuccess(String username,String account,String phone) {
 		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
-		Iterable iterMember =
+		List<String> listMember =
 		app
 				.toAddMember()
-				.addMember(phonenumber, phonenumber, phonenumber)
+				.addMember(username, account, phone)
 				.getMemberList();
 		
-		assertThat(iterMember, (Matcher<? super Iterable>) hasItem("13100000000"));
+		assertThat(listMember, hasItem("test0716"));
 		//添加完以后将刚刚添加的记录删除
 //		app.toContact().searchOneAndDelete(phonenumber);
 		
 	}
+	//实现参数化测试：(反向用例)
+	//测试添加成员，并且添加以后将其删除
+	@ParameterizedTest
+	@ValueSource(strings = {"test0716","test0716a","13100002222"})
+	public void testAddFail(String username,String account,String phone) {
+		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
+		List<String> listMember =
+				app
+						.toAddMember()
+						.addMember(username, account, phone)
+						.getMemberList();
+		
+		assertThat(listMember, hasItem("test0716"));
+		//添加完以后将刚刚添加的记录删除
+//		app.toContact().searchOneAndDelete(phonenumber);
+		
+	}
+	
+	
+	
 	//测试删除功能，多选删除
 	@Test
 	public void testDelete(){
@@ -65,6 +87,14 @@ public class TestWeWork {
 	public void testGetList(){
 		app.toContact().getMemberList();
 	}
+	
+	//测试用
+	public void test(){
+		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
+		JSONObject jsonArray = JSONArray
+		
+	}
+	
 	
 //	@AfterClass
 //	public static void afterAll() {
