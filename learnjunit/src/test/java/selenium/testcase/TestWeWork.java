@@ -1,7 +1,5 @@
 package selenium.testcase;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import org.hamcrest.Matcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -15,7 +13,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertThat;
 
-import net.sf.*;
+
 
 public class TestWeWork {
 	
