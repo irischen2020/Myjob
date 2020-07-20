@@ -1,5 +1,7 @@
 package selenium.testcase;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.hamcrest.Matcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -19,11 +21,11 @@ public class TestWeWork {
 	
 	public static App app;
 	
-	@BeforeClass
-	public static void beforeAll() {
-		app = new App();
-		app.loginWithCookie();
-	}
+//	@BeforeClass
+//	public static void beforeAll() {
+//		app = new App();
+//		app.loginWithCookie();
+//	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -87,9 +89,13 @@ public class TestWeWork {
 	}
 	
 	//测试用
-	public void test(){
+	@Test
+	public void test222(){
 		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
-		JSONObject jsonArray = JSONArray
+		JSONArray jsonArray = JSONArray.parseArray(str);
+		System.out.println("jsonArray:" + jsonArray);
+		
+		System.out.println("jsonArray.get(3):" + jsonArray.get(3));
 		
 	}
 	
