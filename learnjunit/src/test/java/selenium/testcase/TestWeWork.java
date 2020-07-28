@@ -6,11 +6,20 @@ import org.hamcrest.Matcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.platform.engine.Filter;
+import org.junit.runner.manipulation.NoTestsRemainException;
+import org.junit.runners.Parameterized;
 import selenium.pages.App;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertThat;
@@ -21,16 +30,16 @@ public class TestWeWork {
 	
 	public static App app;
 	
-//	@BeforeClass
-//	public static void beforeAll() {
-//		app = new App();
-//		app.loginWithCookie();
-//	}
+	@BeforeAll
+	public static void beforeAll() {
+		app = new App();
+		app.loginWithCookie();
+	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
-	@ValueSource(strings = {"test0716","test0716a","13100002222"})
-	public void testAddSuccess(String username,String account,String phone) {
+	@MethodSource("strings")
+	void testAdd(String username,String account,String phone) {
 		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
 		List<String> listMember =
 		app
@@ -38,10 +47,17 @@ public class TestWeWork {
 				.addMember(username, account, phone)
 				.getMemberList();
 		
-		assertThat(listMember, hasItem("test0716"));
+		assertThat(listMember, hasItem(username));
 		//添加完以后将刚刚添加的记录删除
 //		app.toContact().searchOneAndDelete(phonenumber);
 		
+	}
+	static Stream<Arguments> strings() {
+		return Stream.of(
+				Arguments.of("test072804","test072804a","13122224444"),
+				Arguments.of("test072805","test072805a","13122225555"),
+				Arguments.of("test072803","test072803a","13122223333")
+		);
 	}
 	//实现参数化测试：(反向用例)
 	//测试添加成员，并且添加以后将其删除
@@ -100,7 +116,7 @@ public class TestWeWork {
 	}
 	
 	
-//	@AfterClass
+//	@AfterAll
 //	public static void afterAll() {
 //	 	app.quite();
 //	}

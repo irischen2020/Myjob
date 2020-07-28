@@ -12,7 +12,7 @@ public class ContactPage extends BasePage {
 		
 		findElement(By.id("username")).sendKeys(username);
 		findElement(By.id("memberAdd_acctid")).sendKeys(useraccount);
-		findElement(By.id("memberAdd_phone")).sendKeys(useraccount);
+		findElement(By.id("memberAdd_phone")).sendKeys(phonenumber);
 		findElement(By.linkText("保存")).click();
 		return this;
 	}

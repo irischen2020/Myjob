@@ -9,11 +9,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>junit</groupId>-->
+            <!--<artifactId>junit</artifactId>-->
+            <!--<version>4.12</version>-->
+        <!--</dependency>-->
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -29,12 +29,12 @@
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/pl.pragmatists/JUnitParams -->
-        <dependency>
-            <groupId>pl.pragmatists</groupId>
-            <artifactId>JUnitParams</artifactId>
-            <version>1.1.1</version>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>pl.pragmatists</groupId>-->
+            <!--<artifactId>JUnitParams</artifactId>-->
+            <!--<version>1.1.1</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -116,39 +116,37 @@
             <version>1.2.60</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
 
-        <!--以下是JSONARRAY需要依赖的包-->
-        <!--<dependency>-->
-            <!--<groupId>commons-beanutils</groupId>-->
-            <!--<artifactId>commons-beanutils</artifactId>-->
-            <!--<version>1.9.3</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-collections</groupId>-->
-            <!--<artifactId>commons-collections</artifactId>-->
-            <!--<version>3.2.2</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-lang</groupId>-->
-            <!--<artifactId>commons-lang</artifactId>-->
-            <!--<version>2.6</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-logging</groupId>-->
-            <!--<artifactId>commons-logging</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>commons-httpclient</groupId>-->
-            <!--<artifactId>commons-httpclient</artifactId>-->
-            <!--<version>3.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>net.sf.ezmorph</groupId>-->
-            <!--<artifactId>ezmorph</artifactId>-->
-            <!--<version>1.0.6</version>-->
-        <!--</dependency>-->
 
     </dependencies>
 
@@ -197,6 +195,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.7.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
