@@ -2,10 +2,7 @@ package selenium.testcase;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -25,6 +22,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -103,9 +101,18 @@ public class TestWeWork {
 			for(int i = 1;i< rowNums; i++ )
 				{
 					Row row = sheet1.getRow(i);
+					List<String> list = new ArrayList<String>();
 					if(ExcelReader.isRowEmpty(row) == false)
 					{
 						System.out.println("this is a not null row");
+						Cell cell = row .getCell(1);
+						String s = cell.getStringCellValue();
+						System.out.println(s);
+						
+
+						JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s);
+						jsonObject.values();
+						System.out.println(jsonObject.values());
 						
 					}
 				}
