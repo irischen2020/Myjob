@@ -3,10 +3,9 @@ package selenium.testcase;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.hamcrest.Matcher;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -48,15 +47,15 @@ public class TestWeWork {
 				.getMemberList();
 		
 		assertThat(listMember, hasItem(username));
-		//添加完以后将刚刚添加的记录删除
-//		app.toContact().searchOneAndDelete(phonenumber);
+//		添加完以后将刚刚添加的记录删除
+		app.toContact().searchOneAndDelete(phone);
 		
 	}
 	static Stream<Arguments> strings() {
 		return Stream.of(
-				Arguments.of("test072804","test072804a","13122224444"),
-				Arguments.of("test072805","test072805a","13122225555"),
-				Arguments.of("test072803","test072803a","13122223333")
+				Arguments.of("test072806","test072806a","13122226666"),
+				Arguments.of("test072807","test072807a","13122227777"),
+				Arguments.of("test072808","test072808a","13122228888")
 		);
 	}
 	//实现参数化测试：(反向用例)
@@ -116,8 +115,8 @@ public class TestWeWork {
 	}
 	
 	
-//	@AfterAll
-//	public static void afterAll() {
-//	 	app.quite();
-//	}
+	@AfterAll
+	public static void afterAll() {
+	 	app.quite();
+	}
 }
