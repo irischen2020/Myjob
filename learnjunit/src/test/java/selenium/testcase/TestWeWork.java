@@ -58,11 +58,13 @@ public class TestWeWork {
 				Arguments.of("test072808","test072808a","13122228888")
 		);
 	}
-	//实现参数化测试：(反向用例)
+	//忽略反向用例
+	
+	//实现数据驱动测试，从EXCEL里面读取测试用例
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
-	@ValueSource(strings = {"test0716","test0716a","13100002222"})
-	public void testAddFail(String username,String account,String phone) {
+	@MethodSource("strings")
+	void testAddFromFile(String username,String account,String phone) {
 		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
 		List<String> listMember =
 				app
@@ -70,11 +72,16 @@ public class TestWeWork {
 						.addMember(username, account, phone)
 						.getMemberList();
 		
-		assertThat(listMember, hasItem("test0716"));
-		//添加完以后将刚刚添加的记录删除
-//		app.toContact().searchOneAndDelete(phonenumber);
+		assertThat(listMember, hasItem(username));
+//		添加完以后将刚刚添加的记录删除
+		app.toContact().searchOneAndDelete(phone);
 		
 	}
+
+	
+	
+	
+	
 	
 	
 	
@@ -115,8 +122,8 @@ public class TestWeWork {
 	}
 	
 	
-	@AfterAll
-	public static void afterAll() {
-	 	app.quite();
-	}
+//	@AfterAll
+//	public static void afterAll() {
+//	 	app.quite();
+//	}
 }
