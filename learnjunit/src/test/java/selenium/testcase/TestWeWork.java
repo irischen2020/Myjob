@@ -2,6 +2,10 @@ package selenium.testcase;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +19,12 @@ import org.junit.platform.engine.Filter;
 import org.junit.runner.manipulation.NoTestsRemainException;
 import org.junit.runners.Parameterized;
 import selenium.pages.App;
+import selenium.utils.ExcelReader;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -28,12 +37,12 @@ import static org.junit.Assert.assertThat;
 public class TestWeWork {
 	
 	public static App app;
-	
-	@BeforeAll
-	public static void beforeAll() {
-		app = new App();
-		app.loginWithCookie();
-	}
+//
+//	@BeforeAll
+//	public static void beforeAll() {
+//		app = new App();
+//		app.loginWithCookie();
+//	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -63,7 +72,7 @@ public class TestWeWork {
 	//实现数据驱动测试，从EXCEL里面读取测试用例
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
-	@MethodSource("strings")
+	@MethodSource("stringsFromExcel")
 	void testAddFromFile(String username,String account,String phone) {
 		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
 		List<String> listMember =
@@ -77,9 +86,44 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
+	static Stream<Arguments> stringsFromExcel(){
+		
+		//定义一个空的返回对象
+		Stream<Arguments> returnStream = Stream.empty();
+		
+		InputStream inp = null;
+		try {
+			inp = new FileInputStream(new File("src/main/resources/cases.xlsx"));
+			Workbook workbook = WorkbookFactory.create(inp);
+			Sheet sheet1 = workbook.getSheet("Sheet1");
+			//拿到行数（包括了空行）
+			int rowNums = sheet1.getLastRowNum() + 1;
+			System.out.println(rowNums);
+			//屏蔽掉第一行标题行，循环行
+			for(int i = 1;i< rowNums; i++ )
+				{
+					Row row = sheet1.getRow(i);
+					if(ExcelReader.isRowEmpty(row) == false)
+					{
+						System.out.println("this is a not null row");
+						
+					}
+				}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return null;
+	}
 
-	
-	
+	@Test
+	public void testStringFromExcel(){
+		stringsFromExcel();
+	}
 	
 	
 	
