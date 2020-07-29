@@ -2,6 +2,7 @@ package selenium.testcase;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.Feature;
 import org.apache.poi.ss.usermodel.*;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
@@ -22,9 +23,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.hasItem;
@@ -109,10 +108,15 @@ public class TestWeWork {
 						String s = cell.getStringCellValue();
 						System.out.println(s);
 						
+						
+						
 
-						JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s);
-						jsonObject.values();
-						System.out.println(jsonObject.values());
+						JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s, Feature.OrderedField);
+						System.out.println(jsonObject);
+				
+						
+						//把COLLECTION中的数据，装到Arguments里面
+						
 						
 					}
 				}
