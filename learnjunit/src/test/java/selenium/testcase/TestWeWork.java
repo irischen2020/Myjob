@@ -27,14 +27,17 @@ import java.util.*;
 import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasKey;
 import static org.junit.Assert.assertThat;
 
+import java.util.Map;
 
 
 public class TestWeWork {
 	
 	public static App app;
-//
+	
+	//
 //	@BeforeAll
 //	public static void beforeAll() {
 //		app = new App();
@@ -44,33 +47,7 @@ public class TestWeWork {
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
 	@MethodSource("strings")
-	void testAdd(String username,String account,String phone) {
-		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
-		List<String> listMember =
-		app
-				.toAddMember()
-				.addMember(username, account, phone)
-				.getMemberList();
-		
-		assertThat(listMember, hasItem(username));
-//		添加完以后将刚刚添加的记录删除
-		app.toContact().searchOneAndDelete(phone);
-		
-	}
-	static Stream<Arguments> strings() {
-		return Stream.of(
-				Arguments.of("test072806","test072806a","13122226666"),
-				Arguments.of("test072807","test072807a","13122227777"),
-				Arguments.of("test072808","test072808a","13122228888")
-		);
-	}
-	//忽略反向用例
-	
-	//实现数据驱动测试，从EXCEL里面读取测试用例
-	//测试添加成员，并且添加以后将其删除
-	@ParameterizedTest
-	@MethodSource("stringsFromExcel")
-	void testAddFromFile(String username,String account,String phone) {
+	void testAdd(String username, String account, String phone) {
 		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
 		List<String> listMember =
 				app
@@ -83,11 +60,38 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
-	static Stream<Arguments> stringsFromExcel(){
+	
+	static Stream<Arguments> strings() {
+		return Stream.of(
+				Arguments.of("test072806", "test072806a", "13122226666"),
+				Arguments.of("test072807", "test072807a", "13122227777"),
+				Arguments.of("test072808", "test072808a", "13122228888")
+		);
+	}
+	//忽略反向用例
+	
+	//实现数据驱动测试，从EXCEL里面读取测试用例
+	//测试添加成员，并且添加以后将其删除
+	@ParameterizedTest
+	@MethodSource("stringsFromExcel")
+	void testAddFromFile(String username, String account, String phone) {
+		//添加一个新成员并断言刚刚添加的是否成功存在通讯录页面列表
+		List<String> listMember =
+				app
+						.toAddMember()
+						.addMember(username, account, phone)
+						.getMemberList();
+		
+		assertThat(listMember, hasItem(username));
+//		添加完以后将刚刚添加的记录删除
+		app.toContact().searchOneAndDelete(phone);
+		
+	}
+	
+	static Stream<Arguments> stringsFromExcel() {
 		
 		//定义一个空的返回对象
 		Stream<Arguments> returnStream = Stream.empty();
-		
 		InputStream inp = null;
 		try {
 			inp = new FileInputStream(new File("src/main/resources/cases.xlsx"));
@@ -97,58 +101,52 @@ public class TestWeWork {
 			int rowNums = sheet1.getLastRowNum() + 1;
 			System.out.println(rowNums);
 			//屏蔽掉第一行标题行，循环行
-			for(int i = 1;i< rowNums; i++ )
-				{
-					Row row = sheet1.getRow(i);
-					List<String> list = new ArrayList<String>();
-					if(ExcelReader.isRowEmpty(row) == false)
-					{
-						System.out.println("this is a not null row");
-						Cell cell = row .getCell(1);
-						String s = cell.getStringCellValue();
-						System.out.println(s);
-						
-						
-						
-
-						JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s, Feature.OrderedField);
-						System.out.println(jsonObject);
-				
-						
-						//把COLLECTION中的数据，装到Arguments里面
-						
-						
+			for (int i = 1; i < rowNums; i++) {
+				Row row = sheet1.getRow(i);
+				List<String> list = new ArrayList<String>();
+				if (ExcelReader.isRowEmpty(row) == false) {
+					System.out.println("this is a not null row");
+					Cell cell = row.getCell(1);
+					String s = cell.getStringCellValue();
+					
+					JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s, Feature.OrderedField);
+					
+					//循环JSONOBJECT，把拿到的VALUES值装到ARGUMENTS里面
+					for (Map.Entry entry : jsonObject.entrySet()) {
+						String ss = entry.getValue().toString();
+						list.add(ss);
 					}
+					System.out.println(list);
+					//转换为MethodSource的Arguments对象
+					Arguments arguments = Arguments.of(list.toArray());
+					//Arguments转换为Stream
+					returnStream = Stream.concat(returnStream, Stream.of(arguments));
+					
 				}
-				
+			}
+			return returnStream;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		return null;
+		return returnStream;
 	}
-
+	
 	@Test
-	public void testStringFromExcel(){
+	public void testStringFromExcel() {
 		stringsFromExcel();
 	}
 	
 	
-	
-	
-	
 	//测试删除功能，多选删除
 	@Test
-	public void testDelete(){
+	public void testDelete() {
 		app.toContact().deleteMember();
 	}
 	
 	//测试上传通讯录
 	@Test
-	public void testImport(){
+	public void testImport() {
 		String filepath = "E:\\Setup\\通讯录批量导入模板.xlsx";
 		app.toContact().toImportPage().importFormFile(filepath);
 	}
@@ -161,13 +159,13 @@ public class TestWeWork {
 	
 	//测试获取成员列表方法
 	@Test
-	public void testGetList(){
+	public void testGetList() {
 		app.toContact().getMemberList();
 	}
 	
 	//测试用
 	@Test
-	public void test222(){
+	public void test222() {
 		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
 		JSONArray jsonArray = JSONArray.parseArray(str);
 		System.out.println("jsonArray:" + jsonArray);
@@ -175,8 +173,8 @@ public class TestWeWork {
 		System.out.println("jsonArray.get(3):" + jsonArray.get(3));
 		
 	}
-	
-	
+
+
 //	@AfterAll
 //	public static void afterAll() {
 //	 	app.quite();
