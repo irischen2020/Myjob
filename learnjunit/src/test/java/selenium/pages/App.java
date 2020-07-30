@@ -14,9 +14,9 @@ public class App extends BasePage {
 		//隐式等待
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://work.weixin.qq.com/");
-		driver.manage().addCookie(new Cookie("wwrtx.sid", "iA3OFT_hCudvuMl57KD3ELrjyxYdcMOcWSn_UG7pjnbNDzRHCI0NuVFhQMMruZWx"));
+		driver.manage().addCookie(new Cookie("wwrtx.sid", "iA3OFT_hCudvuMl57KD3EDUlPKkji6O8yp8FNrDa9mr1HpuywVQ9FChg5LrrZLlA"));
 		driver.manage().addCookie(new Cookie("wwrtx.vst",
-				"67QqYK71GukpTKMUOZ5IuODll_F815jN1b5YXP5Uc9ldN5HtIvlLzbjpE3Lr4oMOrqo2X9cwhz9cyU_kVZVTjm9feA7YJDyzODdMlYHo-daq8XPhqwoFygrjQNG3KMZdlAE10TftESHWAt6c1-crnFeVZglFebjS2Mt7d2wpvLDp1MX4gI1ODF9HLqZ6I9PYaVU5ddCRyynhLibIRCa-ywP_NdfFWKfWvov9cdbHL2qtrk_nU9oUpHpunxd9B5a14hlp6WoRf2foUxTnzFVRpw"));
+				"GvclpFQQIdEbF0h6K03U3bnGoorvf3aaQq0VNlg26Yn_aMTnsFlRNnAhRM1JL4lDq46JP1Re6HA9v0Tf9UZbmLyFNsM9UR_UmUBlNiQ3yZJSghjxjSQLeIyV-TyZflU_vw_AsrqlKy-jx-_F1EEGdMefBmMivISQLiZTSCXZhTwFVkATqtwc02wVNp4E-NbMj6dGCqzSNeLOjyKe704ymezYgAa487KRaUGhF9otpEFHR06nnQlBtnEAqJM2XPE8DrNq_2JNM2v7VjRsKZ2NsQ"));
 		
 		findElement(By.linkText("企业登录")).click();
 		//或者直接刷新

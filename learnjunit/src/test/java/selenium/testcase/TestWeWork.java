@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -37,12 +38,11 @@ public class TestWeWork {
 	
 	public static App app;
 	
-	//
-//	@BeforeAll
-//	public static void beforeAll() {
-//		app = new App();
-//		app.loginWithCookie();
-//	}
+	@BeforeAll
+	public static void beforeAll() {
+		app = new App();
+		app.loginWithCookie();
+	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -60,7 +60,6 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
-	
 	static Stream<Arguments> strings() {
 		return Stream.of(
 				Arguments.of("test072806", "test072806a", "13122226666"),
@@ -87,56 +86,16 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
-	
 	static Stream<Arguments> stringsFromExcel() {
-		
-		//定义一个空的返回对象
-		Stream<Arguments> returnStream = Stream.empty();
-		InputStream inp = null;
-		try {
-			inp = new FileInputStream(new File("src/main/resources/cases.xlsx"));
-			Workbook workbook = WorkbookFactory.create(inp);
-			Sheet sheet1 = workbook.getSheet("Sheet1");
-			//拿到行数（包括了空行）
-			int rowNums = sheet1.getLastRowNum() + 1;
-			System.out.println(rowNums);
-			//屏蔽掉第一行标题行，循环行
-			for (int i = 1; i < rowNums; i++) {
-				Row row = sheet1.getRow(i);
-				List<String> list = new ArrayList<String>();
-				if (ExcelReader.isRowEmpty(row) == false) {
-					System.out.println("this is a not null row");
-					Cell cell = row.getCell(1);
-					String s = cell.getStringCellValue();
-					
-					JSONObject jsonObject = (JSONObject) JSONObject.parseObject(s, Feature.OrderedField);
-					
-					//循环JSONOBJECT，把拿到的VALUES值装到ARGUMENTS里面
-					for (Map.Entry entry : jsonObject.entrySet()) {
-						String ss = entry.getValue().toString();
-						list.add(ss);
-					}
-					System.out.println(list);
-					//转换为MethodSource的Arguments对象
-					Arguments arguments = Arguments.of(list.toArray());
-					//Arguments转换为Stream
-					returnStream = Stream.concat(returnStream, Stream.of(arguments));
-					
-				}
-			}
-			return returnStream;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return returnStream;
+		return ExcelReader.getArgumentsStream("src/main/resources/cases.xlsx","Sheet1");
 	}
 	
+	//Order注解可以排序，用例的执行顺序
+	@Order(100)
 	@Test
 	public void testStringFromExcel() {
 		stringsFromExcel();
 	}
-	
 	
 	//测试删除功能，多选删除
 	@Test
@@ -174,9 +133,8 @@ public class TestWeWork {
 		
 	}
 
-
-//	@AfterAll
-//	public static void afterAll() {
-//	 	app.quite();
-//	}
+	@AfterAll
+	public static void afterAll() {
+	 	app.quite();
+	}
 }
