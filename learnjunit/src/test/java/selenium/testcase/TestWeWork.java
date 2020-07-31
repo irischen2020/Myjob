@@ -38,11 +38,11 @@ public class TestWeWork {
 	
 	public static App app;
 	
-	@BeforeAll
-	public static void beforeAll() {
-		app = new App();
-		app.loginWithCookie();
-	}
+//	@BeforeAll
+//	public static void beforeAll() {
+//		app = new App();
+//		app.loginWithCookie();
+//	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -90,8 +90,7 @@ public class TestWeWork {
 		return ExcelReader.getArgumentsStream("src/main/resources/cases.xlsx","Sheet1");
 	}
 	
-	//Order注解可以排序，用例的执行顺序
-	@Order(100)
+	
 	@Test
 	public void testStringFromExcel() {
 		stringsFromExcel();
@@ -110,6 +109,8 @@ public class TestWeWork {
 		app.toContact().toImportPage().importFormFile(filepath);
 	}
 	
+	//Order注解可以排序，用例的执行顺序
+	@Order(100)
 	//测试消息发送
 	@Test
 	public void testMessageSend() throws InterruptedException {
@@ -124,17 +125,35 @@ public class TestWeWork {
 	
 	//测试用
 	@Test
-	public void test222() {
-		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
-		JSONArray jsonArray = JSONArray.parseArray(str);
-		System.out.println("jsonArray:" + jsonArray);
+//	public void test222() {
+//		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
+//		JSONArray jsonArray = JSONArray.parseArray(str);
+//		System.out.println("jsonArray:" + jsonArray);
+//
+//		System.out.println("jsonArray.get(3):" + jsonArray.get(3));
+//	}
+	//迭代器的使用
+	public void test0731(){
+	List<String> list = new ArrayList<String>();
+	list.add("111");
+	list.add("222");
+	list.add("333");
+	
+	//获取迭代器
+		Iterator it = list.iterator();
 		
-		System.out.println("jsonArray.get(3):" + jsonArray.get(3));
+		while(it.hasNext())
+		{
+		System.out.println(it.next());}
 		
 	}
-
-	@AfterAll
-	public static void afterAll() {
-	 	app.quite();
-	}
+	
+	//测试YAML文件解析
+	@Test
+	
+	
+//	@AfterAll
+//	public static void afterAll() {
+//	 	app.quite();
+//	}
 }
