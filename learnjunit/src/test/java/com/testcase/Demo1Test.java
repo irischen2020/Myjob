@@ -1,23 +1,23 @@
 package com.testcase;
 
 import org.junit.*;
+import org.junit.jupiter.api.*;
 
-import static org.junit.Assert.assertTrue;
 
 public class Demo1Test {
-	@BeforeClass
+	@BeforeAll
 	public static void testBeforClass(){
 		System.out.println("run testBeforClass");
 	}
-	@AfterClass
+	@AfterAll
 	public static void testAfterClass(){
 		System.out.println("run testAfterClass");
 	}
-	@Before
+	@BeforeEach
 	public void testBefor(){
 		System.out.println("run testBefor");
 	}
-	@After
+	@AfterEach
 	public void testAfter(){
 		System.out.println("run testAfter");
 	}

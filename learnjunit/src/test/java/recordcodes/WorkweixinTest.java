@@ -1,13 +1,10 @@
 package recordcodes;
 
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.After;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNot.not;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,13 +24,13 @@ public class WorkweixinTest {
 	private Map<String, Object> vars;
 	JavascriptExecutor js;
 	
-	@Before
+	@BeforeAll
 	public void setUp() {
 		js = (JavascriptExecutor) driver;
 		vars = new HashMap<String, Object>();
 	}
 	
-	@After
+	@AfterAll
 //	public void tearDown() {
 //		driver.quit();
 //	}
