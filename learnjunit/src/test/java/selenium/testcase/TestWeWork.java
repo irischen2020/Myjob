@@ -38,11 +38,11 @@ public class TestWeWork {
 	
 	public static App app;
 	
-//	@BeforeAll
-//	public static void beforeAll() {
-//		app = new App();
-//		app.loginWithCookie();
-//	}
+	@BeforeAll
+	public static void beforeAll() {
+		app = new App();
+		app.loginWithCookie();
+	}
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -152,8 +152,8 @@ public class TestWeWork {
 	@Test
 	
 	
-//	@AfterAll
-//	public static void afterAll() {
-//	 	app.quite();
-//	}
+	@AfterAll
+	public static void afterAll() {
+	 	app.quite();
+	}
 }
