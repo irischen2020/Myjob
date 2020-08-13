@@ -19,7 +19,7 @@ public class TestWork {
 		token =
 		given()
 				.param("corpid", "wwc135398b05beab7c")
-				.param("corpsecret", "cPMWkjGTqDxhI3dWGjFgGmG53hS_lZQj-q_Lj3madTQ")
+				.param("corpsecret", "cPMWkjGTqDxhI3dWGjFgGkADDwigNl7F__8IxC09XpM")
 		.when()
 				.log().all()
 				.get("https://qyapi.weixin.qq.com/cgi-bin/gettoken")
@@ -32,6 +32,7 @@ public class TestWork {
 	}
 	
 	@Test
+	//创建部门
 	public void departCreate(){
 		Map<String,Object> data = new HashMap<>();
 		data.put("name","部门1");
@@ -46,5 +47,11 @@ public class TestWork {
 		.then().log().all()
 				.body("errcode",equalTo(0));
 				
+	}
+	
+	@Test
+	//获取部门列表
+	public void getDepartList(){
+	
 	}
 }
