@@ -47,10 +47,12 @@ public class TestLittle {
 		String timestamp = String.valueOf(System.currentTimeMillis());
 		Random random = new Random();
 		
-		int rand1 = random.nextInt(10); //生成一个0－10的任意正整数
-		int rand2 = random.nextInt(10);
+		Integer rand1 = random.nextInt(10); //生成一个0－10的任意正整数
+		Integer rand2 = random.nextInt(10);
 		
-		System.out.println(timestamp.length());
+		String phoneEnd = rand1.toString() + timestamp.substring(7) +rand2.toString();
 		
+		String phone = phonePrefix + phoneEnd;
+		System.out.println(phone);
 	}
 }
