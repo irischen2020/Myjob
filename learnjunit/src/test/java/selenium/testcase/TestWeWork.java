@@ -34,6 +34,7 @@ public class TestWeWork {
 		app = new App();
 		app.loginWithCookie();
 	}
+	
 	//实现参数化测试：(正向用例)
 	//测试添加成员，并且添加以后将其删除
 	@ParameterizedTest
@@ -51,6 +52,7 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
+	
 	static Stream<Arguments> strings() {
 		return Stream.of(
 				Arguments.of("test072806", "test072806a", "13122226666"),
@@ -77,8 +79,9 @@ public class TestWeWork {
 		app.toContact().searchOneAndDelete(phone);
 		
 	}
+	
 	static Stream<Arguments> stringsFromExcel() {
-		return ExcelReader.getArgumentsStream("src/main/resources/cases.xlsx","Sheet1");
+		return ExcelReader.getArgumentsStream("src/main/resources/cases.xlsx", "Sheet1");
 	}
 	
 	
@@ -113,38 +116,11 @@ public class TestWeWork {
 	public void testGetList() {
 		app.toContact().getMemberList();
 	}
-	
-	//测试用
-	@Test
-//	public void test222() {
-//		String str = "[\"全套\",\"5-1\",\"5-2\",\"5-3\",\"5-4\",\"5-5\"]";
-//		JSONArray jsonArray = JSONArray.parseArray(str);
-//		System.out.println("jsonArray:" + jsonArray);
-//
-//		System.out.println("jsonArray.get(3):" + jsonArray.get(3));
-//	}
-	//迭代器的使用
-	public void test0731(){
-	List<String> list = new ArrayList<String>();
-	list.add("111");
-	list.add("222");
-	list.add("333");
-	
-	//获取迭代器
-		Iterator it = list.iterator();
-		
-		while(it.hasNext())
-		{
-		System.out.println(it.next());}
-		
-	}
-	
-	//测试YAML文件解析
-	@Test
+
 	
 	
 	@AfterAll
 	public static void afterAll() {
-	 	app.quite();
+		app.quite();
 	}
 }
