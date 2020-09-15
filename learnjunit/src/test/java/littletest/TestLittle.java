@@ -3,12 +3,14 @@ package littletest;
 import com.alibaba.fastjson.JSONArray;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import javax.swing.*;
+import java.io.*;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TestLittle {
+	public Logger logger = Logger.getLogger("日志测试");
 	
 	//测试用
 	
@@ -54,5 +56,39 @@ public class TestLittle {
 		
 		String phone = phonePrefix + phoneEnd;
 		System.out.println(phone);
+	}
+	
+	@Test
+	//记录日志，有点问题
+	public void test0915(){
+		//记录日志，有点问题
+		logger.info("this is info log");
+		logger.log(Level.INFO,"THIS IS INFO LOG");
+		logger.log(Level.WARNING,"this is warning");
+	}
+	
+	//异常处理机制，抛出异常
+	@Test
+	public void testException(){
+		String filePath = "src/test/resources/11.properties";
+		
+		try {
+			loadProperties(filePath);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("111");
+		
+	}
+	
+	private void loadProperties(String filePath) throws IOException {
+		//准备文件对象
+		File file = new File(filePath);
+		//将文件的内容读取到输入流对象
+		InputStream inputStream = new FileInputStream(file);
+		Properties properties = new Properties();
+		properties.load(inputStream);
+		System.out.println(properties.getProperty("log4j.rootLogger"));
 	}
 }
