@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test.Exx</groupId>
+    <artifactId>Exx</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.jmeter/ApacheJMeter_core -->
+    <dependency>
+        <groupId>org.apache.jmeter</groupId>
+        <artifactId>ApacheJMeter_core</artifactId>
+        <version>5.3</version>
+    </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.jmeter/ApacheJMeter_java -->
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_java</artifactId>
+            <version>5.3</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <!--打WAR包,不加这个就默认打JAR包-->
+    <!--<packaging>war</packaging>-->
+
+
+</project>
