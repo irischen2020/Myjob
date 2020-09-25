@@ -1,9 +1,8 @@
-package com.testcase;
+package com.junit5testcase;
 
-import org.junit.*;
 import org.junit.jupiter.api.*;
 
-
+//JUNIT5
 public class Demo1Test {
 	@BeforeAll
 	public static void testBeforClass(){

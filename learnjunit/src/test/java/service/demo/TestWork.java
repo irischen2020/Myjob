@@ -1,4 +1,4 @@
-package service;
+package service.demo;
 
 
 import io.restassured.http.ContentType;

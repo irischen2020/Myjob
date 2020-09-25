@@ -12,7 +12,6 @@ public class JdbcDemo {
 		String sql = "select id,regname,leaveamount from member where mobilephone=? and Type=?";
 		Object[] values = {"18330372028","1"};
 		JDBCUtil.query(sql,values);
-		Ass
 	}
 
 }
