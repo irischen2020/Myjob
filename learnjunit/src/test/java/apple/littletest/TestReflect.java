@@ -1,4 +1,4 @@
-package littletest;
+package apple.littletest;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ public class TestReflect {
 	*/
 	
 	@Test
-	public void ReflectDemo(){
+	public void reflectDemo(){
 	
 	}
 	

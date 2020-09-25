@@ -1,4 +1,4 @@
-package littletest;
+package apple.littletest;
 
 import com.alibaba.fastjson.JSONArray;
 import org.junit.jupiter.api.Test;

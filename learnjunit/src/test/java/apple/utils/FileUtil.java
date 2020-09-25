@@ -55,7 +55,7 @@ public class FileUtil {
 	}
 	
 	//解析properties文件
-	public static Properties ResolvePro(String path){
+	public static Properties readProp(String path){
 		Properties prop = new Properties();
 		try{
 			InputStream ins = new FileInputStream(new File(path));
@@ -68,7 +68,7 @@ public class FileUtil {
 	}
 	
 	//解析XML文件
-	public static void ReadXml(String path,String secondnode,String nodes1,String nodes2,String nodes3) throws Exception {
+	public static void readXml(String path,String secondnode,String nodes1,String nodes2,String nodes3) throws Exception {
 		
 		//创建解析器SaxReader对象
 		SAXReader reader = new SAXReader();
