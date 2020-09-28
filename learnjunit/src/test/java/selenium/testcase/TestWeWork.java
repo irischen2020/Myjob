@@ -74,7 +74,7 @@ public class TestWeWork {
 	}
 	
 	static Stream<Arguments> stringsFromExcel() {
-		return ExcelReader.getArgumentsStream("src/main/resources/cases.xlsx", "Sheet1");
+		return ExcelReader.getArgumentsStream("src/main/resources/webcases.xlsx", "Sheet1");
 	}
 	
 	

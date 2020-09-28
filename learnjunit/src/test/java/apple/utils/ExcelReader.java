@@ -91,7 +91,7 @@ public class ExcelReader {
 		return returnStream;
 	}
 	
-	//判断EXCEL表格中的某一行是否为空
+	//判断EXCEL表格中的某一行是否为空行
 	public static boolean isRowEmpty(Row row){
 		for(int i = row.getFirstCellNum();i < row.getLastCellNum();i++){
 			Cell cell = row.getCell(i);
