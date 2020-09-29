@@ -2,7 +2,6 @@ package apple.utils;
 
 import org.apache.http.*;
 
-
 import org.apache.http.HttpEntity;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -25,9 +24,9 @@ import java.util.Map;
 	 * @version : 2.0
 	 * @date : 2020/9/28
 	 */
-	public class HttpClientUtil {
+	public class HttpClientUtilBak {
 
-		private static Logger logger = Logger.getLogger(HttpClientUtil.class);
+		private static Logger logger = Logger.getLogger(HttpClientUtilBak.class);
 		/**
 		 * 处理application/json 格式报文的请求
 		 * 通过post方式调用http接口
@@ -47,8 +46,8 @@ import java.util.Map;
 				httpClient = HttpClientBuilder.create().build();
 				//创建HTTPPOST
 				HttpPost httpPost = new HttpPost(url);
-				// 设置请求头和报文
-				Header header=new BasicHeader("Accept-Encoding","application/json");
+				// 设置请求头
+				Header header = new BasicHeader("Accept-Encoding","application/json");
 				httpPost.setHeader(header);
 				// 设置请求参数
 				StringEntity stringEntity = new StringEntity(jsonParam,"utf-8");
@@ -61,7 +60,7 @@ import java.util.Map;
 				//判断是否成功，处理请求结果
 				if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 					//读取服务器返回的JSON字符串数据
-					httpEntity= httpResponse.getEntity();
+					httpEntity = httpResponse.getEntity();
 					result = EntityUtils.toString(httpEntity);
 				}
 				
@@ -95,7 +94,7 @@ import java.util.Map;
 			try {
 				// 创建连接
 				httpClient = HttpClientBuilder.create().build();
-				// 设置请求头和报文
+				// 创建HTTP
 				HttpPost httpPost = new HttpPost(url);
 				//设置参数
 				List<NameValuePair> list = new ArrayList<NameValuePair>();
@@ -111,7 +110,7 @@ import java.util.Map;
 				httpResponse = httpClient.execute(httpPost);
 				//判断是否成功，处理请求结果
 				if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-					httpEntity= httpResponse.getEntity();
+					httpEntity = httpResponse.getEntity();
 					result = EntityUtils.toString(httpEntity);
 				}
 			} catch (Exception e) {
@@ -174,4 +173,4 @@ import java.util.Map;
 
 		}
 	}
-}
+
