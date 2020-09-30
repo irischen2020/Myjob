@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--suite-->
+<suite name="futureloan">
+    <!--测试集-->
+    <test name="register">
+            <!--测试类-->
+    <classes>
+        <!--单个的测试类定义,类的类路径全名-->
+        <class name=""></class>
+    </classes>
+
+    </test>
+</suite>

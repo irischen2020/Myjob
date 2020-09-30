@@ -1,7 +1,8 @@
 package apple.littletest;
 
-import apple.utils.JDBCUtil;
-import org.junit.jupiter.api.Test;
+import apple.baks.JDBCUtil;
+import org.testng.annotations.Test;
+
 
 public class JdbcDemo {
 	@Test

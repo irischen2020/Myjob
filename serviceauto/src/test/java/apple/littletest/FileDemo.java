@@ -1,9 +1,9 @@
 package apple.littletest;
 
-import apple.utils.FileUtil;
+import apple.baks.FileUtil;
 import org.junit.jupiter.api.Test;
 
-import static apple.utils.FileUtil.fileCreate;
+import static apple.baks.FileUtil.fileCreate;
 
 public class FileDemo {
 	//创建目录，再在此目录下创建文件
