@@ -22,9 +22,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class HttpClientUtil {
+public class HttpClientUtils {
 	private static Logger logger = Logger.getLogger(TestServiceDemo.class);
-	
 	
 	public static String doGet(String url, Map<String,String> params) {
 		//get请求

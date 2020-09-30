@@ -1,6 +1,6 @@
 package com.services;
 
-import apple.utils.HttpClientUtil;
+import apple.utils.HttpClientUtils;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -18,7 +18,7 @@ public class TestServiceDemo {
 		map.put("mobilephone","18330372028");
 		map.put("pwd","123456");
 		//get请求
-		HttpClientUtil.doGet(url,map);
+		HttpClientUtils.doGet(url,map);
 	}
 	
 	@Test
@@ -28,7 +28,7 @@ public class TestServiceDemo {
 		map.put("mobilephone","18330372028");
 		map.put("pwd","123456");
 		//POST请求
-		HttpClientUtil.doPost(url,map);
+		HttpClientUtils.doPost(url,map);
 	}
 	
 }
