@@ -14,11 +14,9 @@ public class TestServiceDemo {
 	@Test
 	public void testSendGet() {
 		String url = "http://test.lemonban.com:8080/futureloan/mvc/api/member/login";
-		String mobilephone = "18330372028";
-		String pwd = "123456";
 		Map<String,String> map = new HashMap<String,String>();
-		map.put("mobilephone",mobilephone);
-		map.put("pwd",pwd);
+		map.put("mobilephone","18330372028");
+		map.put("pwd","123456");
 		//get请求
 		HttpClientUtil.doGet(url,map);
 	}
@@ -26,11 +24,9 @@ public class TestServiceDemo {
 	@Test
 	public void testSendPost(){
 		String url = "http://test.lemonban.com:8080/futureloan/mvc/api/member/login";
-		String mobilephone = "18330372028";
-		String pwd = "123456";
 		Map<String,String> map = new HashMap<String,String>();
-		map.put("mobilephone",mobilephone);
-		map.put("pwd",pwd);
+		map.put("mobilephone","18330372028");
+		map.put("pwd","123456");
 		//POST请求
 		HttpClientUtil.doPost(url,map);
 	}

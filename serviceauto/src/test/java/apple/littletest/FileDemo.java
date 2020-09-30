@@ -1,7 +1,8 @@
 package apple.littletest;
 
 import apple.baks.FileUtil;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+
 
 import static apple.baks.FileUtil.fileCreate;
 
