@@ -13,6 +13,7 @@ public class ExcelUtils {
 		String excelPath = "src/test/resources/servicecasesv1.xlsx";
 		List<List> lists = null;
 		Object[][] datas = null;
+		String value = "";
 		try {
 			//获取WORKBOOK对象
 			Workbook workbook = WorkbookFactory.create(new File(excelPath));
@@ -26,8 +27,13 @@ public class ExcelUtils {
 				List<String> list = new ArrayList<String>();
 				for (int j = 5;j <= 6; j++){
 					Cell cell = row.getCell(j);
-					cell.setCellType(CellType.STRING);
-					String value = cell.getStringCellValue();
+					if (cell == null){
+						value = "";
+					}else{
+						cell.setCellType(CellType.STRING);
+						value = cell.getStringCellValue();
+					}
+					System.out.println(value);
 					list.add(value);
 				}
 				lists.add(list);
@@ -41,12 +47,13 @@ public class ExcelUtils {
 	}
 	
 	public static Object[][] listToArray(List<List> list){
+		String value = "";
 		//定义一个二维数组接收返回结果
 		Object[][] datas = new Object[list.size()][];
 		for (int i = 0; i<list.size(); i++){
 			List<String> listin = list.get(i);
 			for (int j = 0;j < listin.size(); j++){
-				String value = listin.get(j);
+				value = listin.get(j);
 				datas[i][j] = value;
 			}
 		}
