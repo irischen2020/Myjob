@@ -54,7 +54,11 @@ public class ExcelUtils {
 			List<String> listin = list.get(i);
 			for (int j = 0;j < listin.size(); j++){
 				value = listin.get(j);
-				datas[i][j] = value;
+				if (value == null){
+					value = "";
+				}
+//				datas[i][j] = value;
+				System.out.println(value);
 			}
 		}
 		return datas;
