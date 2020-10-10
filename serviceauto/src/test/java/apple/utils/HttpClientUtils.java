@@ -45,7 +45,7 @@ public class HttpClientUtils {
 			}
 		}
 		HttpGet httpGet = new HttpGet(url);
-		HttpResponse httpResponse = null;
+//		HttpResponse httpResponse = null;
 		HttpEntity httpEntity = null;
 		String result = "";
 		//执行GET请求
@@ -77,7 +77,7 @@ public class HttpClientUtils {
 		HttpClient httpClient = HttpClientBuilder.create().build();
 		//创建POST
 		HttpPost httpPost = new HttpPost(url);
-		HttpResponse httpResponse = null;
+//		HttpResponse httpResponse = null;
 		HttpEntity httpEntity = null;
 		String result = "";
 		//准备参数

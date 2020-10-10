@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterCase_v1 {
+public class RegisterCase_v3 {
 
 	@Test(dataProvider = "datas")
 	public void test1(String mobilephone,String pwd){
