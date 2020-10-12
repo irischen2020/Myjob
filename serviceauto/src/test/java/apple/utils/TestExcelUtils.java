@@ -16,4 +16,10 @@ public class TestExcelUtils {
 		}
 		
 	}
+	@Test
+	public void testdatas(){
+		Object ss[][] = new Object[1][2];
+		ss[0][0] = "";
+		System.out.println(ss[0][0]);
+	}
 }
