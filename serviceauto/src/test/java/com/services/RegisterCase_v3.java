@@ -2,6 +2,9 @@ package com.services;
 
 import apple.utils.ExcelUtils;
 import apple.utils.HttpClientUtils;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.poi.ss.formula.ptg.MemAreaPtg;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,28 +14,22 @@ import java.util.Map;
 public class RegisterCase_v3 {
 
 	@Test(dataProvider = "datas")
-	public void test1(String mobilephone,String pwd){
+	public void test1(String params){
 		String url = "http://test.lemonban.com:8080/futureloan/mvc/api/member/login";
+		
 		Map<String,String> map = new HashMap<String,String>();
-		map.put("mobilephone",mobilephone);
-		map.put("pwd",pwd);
+		map = (Map<String, String>) JSONObject.parse(params);
+		
 		//POST请求
 		HttpClientUtils.doPost(url,map);
 	}
 	@DataProvider
 	public Object[][] datas(){
-//		Object[][] datas = {
-//				{"18330372028",""},
-//				{"","111111"},
-//				{"123",""},
-//				{"18330372028","12345"},
-//				{"18330372028","123456"},
-//				{"12345678956","123456"}
-//		};
-		//从EXCEL读取数据，封装到二维数组里面
+
+//		从EXCEL读取数据，封装到二维数组里面
 		
-//		Object[][] datas = ExcelUtils.getDatas();
-//		return datas;
-		return null;
+		Object[][] datas = ExcelUtils.getDatas();
+		return datas;
+	
 	}
 }

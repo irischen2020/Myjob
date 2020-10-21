@@ -20,8 +20,8 @@ public class ExcelUtils {
 			for (int i = 1;i <= 6; i++ ){
 				//获取行
 				Row row = sheet.getRow(i);
-				datas[i-1] = new Object[2];
-				for (int j = 5;j <= 6; j++){
+				datas[i-1] = new Object[1];
+				for (int j = 5;j <= 5; j++){
 					//避免拿到的 CELL为NULL
 					Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 					cell.setCellType(CellType.STRING);
@@ -65,6 +65,10 @@ public class ExcelUtils {
 			e.printStackTrace();
 		}
 		return datas;
+	}
+	
+	public static void main(String[] args) {
+		getDatas();
 	}
 
 }

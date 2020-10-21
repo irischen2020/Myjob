@@ -71,7 +71,7 @@ public class HttpClientUtils {
 		return result;
 	}
 
-	public static String doPost(String url, Map<String,String> params){
+	public static String doPost(String url, Map<String, String> params){
 
 		//创建HTTPCLIENT
 		HttpClient httpClient = HttpClientBuilder.create().build();
