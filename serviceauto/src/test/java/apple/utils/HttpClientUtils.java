@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class HttpClientUtils {
-	private static Logger logger = Logger.getLogger(TestServiceDemo.class);
+	private static Logger logger = Logger.getLogger(HttpClientUtils.class);
 	
 	public static String doGet(String url, Map<String,String> params) {
 		//get请求
@@ -130,8 +130,5 @@ public class HttpClientUtils {
 		return result;
 	}
 	
-	//把传入的JSON格式的参数字符串。解析，成可以传入请求的参数
-	public static void jsonToStrings(String jsonstr){
-	
-	}
+
 }
