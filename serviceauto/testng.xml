@@ -7,8 +7,10 @@
             <!--测试类-->
     <classes>
         <!--单个的测试类定义,类的类路径全名-->
-        <class name="com.services.RegisterCase"></class>
+        <class name="com.services.RegisterCase_v3"></class>
     </classes>
 
     </test>
 </suite>
+
+
