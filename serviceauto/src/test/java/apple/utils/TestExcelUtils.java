@@ -11,7 +11,7 @@ public class TestExcelUtils {
 		for (int i=0;i<datas.length;i++){
 			for (int j=0;j<datas[i].length;j++){
 				String s= (String) datas[i][j];
-//				System.out.println(s);
+				System.out.println(s);
 			}
 		}
 		
