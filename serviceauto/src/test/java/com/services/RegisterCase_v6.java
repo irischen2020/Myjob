@@ -1,5 +1,6 @@
 package com.services;
 
+import apple.utils.CaseUtils;
 import apple.utils.ExcelUtils;
 import apple.utils.HttpClientUtils;
 
@@ -27,8 +28,10 @@ public class RegisterCase_v6 {
 	public Object[][] datas(){
 
 //		从EXCEL读取数据，封装到二维数组里面
+//		Object[][] datas = ExcelUtils.getDatas();
 		
-		Object[][] datas = ExcelUtils.getDatas();
+		String[] cellNames={"Params"};
+		Object[][] datas = CaseUtils.getCaseDatasByApiId("1",cellNames);
 		return datas;
 		
 	}
