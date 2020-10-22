@@ -1,9 +1,11 @@
 package apple.utils;
 
+import apple.pojo.Cases;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class ExcelUtils {
 	public  static Object[][] getDatas() {
@@ -67,8 +69,39 @@ public class ExcelUtils {
 		return datas;
 	}
 	
-	public static void main(String[] args) {
-		getDatas();
+	public static List<Cases> load(String excelPath, String sheetName) {
+		
+		try {
+			Workbook workbook = WorkbookFactory.create(new File(excelPath));
+			Sheet sheet = workbook.getSheet(sheetName);
+			//定义一个LIST来接收读取出来的数据
+			
+			//获取最后一行的行号
+			int rowNum = sheet.getLastRowNum();
+			//循环行
+			for (int i = 0;i<=rowNum;i++){
+				Row row = sheet.getRow(i);
+				int cellNum = row.getLastCellNum();
+				for (int j=0;j<=cellNum;j++){
+					//避免拿 到的CELL为空
+					Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+					cell.setCellType(CellType.STRING);
+					String value = cell.getStringCellValue();
+					System.out.println(value);
+				}
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
+	//测试用代码
+//	public static void main(String[] args) {
+//		getDatas();
+//	}
+
 
 }
