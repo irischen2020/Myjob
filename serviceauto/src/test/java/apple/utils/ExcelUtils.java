@@ -75,20 +75,36 @@ public class ExcelUtils {
 		try {
 			Workbook workbook = WorkbookFactory.create(new File(excelPath));
 			Sheet sheet = workbook.getSheet(sheetName);
+			Class clazz = Cases.class;
+			//通过反射封装对象
+			//获取第一行标题行，拿到列名，等同于拿到了方法名，存入数组
+			Row titleRow = sheet.getRow(0);
+			//获取到列的索引+1
+			int cellNum = titleRow.getLastCellNum();
+			String[] fields = new String[cellNum];
+			for (int i  =0;i < cellNum; i++){
+				Cell titleCell = titleRow.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+				titleCell.setCellType(CellType.STRING);
+				String title = titleCell.getStringCellValue();
+				title = title.substring(0,title.indexOf("("));
+				fields[i] = title;
+			}
+			
 			//定义一个LIST来接收读取出来的数据
 			List<Cases> lists = new ArrayList<Cases>();
 			//获取最后一行的行号
 			int rowNum = sheet.getLastRowNum();
-			//循环行
-			for (int i = 0;i<=rowNum;i++){
+			//循环行,循环处理每个数据行
+			for (int i = 1;i < rowNum; i++){
 				Row row = sheet.getRow(i);
-				int cellNum = row.getLastCellNum();
-				for (int j=0;j<=cellNum;j++){
+				for (int j = 0;j < cellNum; j++){
 					//避免拿 到的CELL为空
 					Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 					cell.setCellType(CellType.STRING);
 					String value = cell.getStringCellValue();
 					System.out.println(value);
+					//通过反射封装
+					
 				}
 			}
 			
