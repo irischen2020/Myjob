@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExcelUtils {
@@ -75,7 +76,7 @@ public class ExcelUtils {
 			Workbook workbook = WorkbookFactory.create(new File(excelPath));
 			Sheet sheet = workbook.getSheet(sheetName);
 			//定义一个LIST来接收读取出来的数据
-			
+			List<Cases> lists = new ArrayList<Cases>();
 			//获取最后一行的行号
 			int rowNum = sheet.getLastRowNum();
 			//循环行
