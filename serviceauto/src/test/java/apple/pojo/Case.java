@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cases {
+public class Case {
 	private String caseId;
 	private String desc;
 	private String apiId;

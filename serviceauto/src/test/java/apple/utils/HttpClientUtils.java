@@ -130,5 +130,14 @@ public class HttpClientUtils {
 		return result;
 	}
 	
+	public static void doService(String type,String url,Map<String, String> params){
+		if(type.equals("get")){
+			doGet(url,params);
+		}
+		if(type.equals("post")){
+			doGet(url,params);
+		}
+	}
+	
 
 }
