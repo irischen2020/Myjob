@@ -103,7 +103,6 @@ public class HttpClientUtils {
 
 		//执行请求并判断请求结果
 		result = getResultString(httpClient, httpPost, httpEntity);
-		System.out.println(result);
 		return result;
 	}
 	
