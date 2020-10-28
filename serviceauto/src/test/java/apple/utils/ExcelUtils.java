@@ -109,7 +109,6 @@ public class ExcelUtils {
 					 Method method = clazz.getMethod(methodName,String.class);
 					 //反射调用方法
 					 method.invoke(cs,value);
-					
 				}
 				list.add(cs);
 			}
