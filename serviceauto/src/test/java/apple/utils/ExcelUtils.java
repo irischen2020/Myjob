@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ExcelUtils {
 	public  static Object[][] getDatas() {
-		String excelPath = "src/test/resources/servicecasesv2.xlsx";
+		String excelPath = "src/test/resources/servicecasesv3.xlsx";
 		//定义一个二维数组
 		Object[][] datas = new Object[6][];
 		String value = "";
@@ -34,7 +34,7 @@ public class ExcelUtils {
 					datas[i-1][j-5] = value;
 				}
 			}
-			
+		workbook.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -64,7 +64,7 @@ public class ExcelUtils {
 					datas[i-1][j-5] = value;
 				}
 			}
-			
+		workbook.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -113,6 +113,7 @@ public class ExcelUtils {
 				}
 				list.add(cs);
 			}
+			workbook.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

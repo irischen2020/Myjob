@@ -67,7 +67,7 @@ public class HttpClientUtils {
 //				logger.error("http请求释放资源异常",e);
 //			}
 //		}
-		result = getResultString(httpClient, httpGet, httpEntity, result);
+		result = getResultString(httpClient, httpGet, httpEntity);
 		return result;
 	}
 
@@ -77,9 +77,8 @@ public class HttpClientUtils {
 		HttpClient httpClient = HttpClientBuilder.create().build();
 		//创建POST
 		HttpPost httpPost = new HttpPost(url);
-//		HttpResponse httpResponse = null;
-		HttpEntity httpEntity = null;
 		String result = "";
+		HttpEntity httpEntity = null;
 		//准备参数
 		List<NameValuePair> list = new ArrayList<NameValuePair>();
 		//遍历MAP,取出传入的参数
@@ -89,11 +88,11 @@ public class HttpClientUtils {
 			 	String value = params.get(key);
 			 	BasicNameValuePair nameValuePair = new BasicNameValuePair(key,value);
 			 	list.add(nameValuePair);
-			
+
 		}
 		//准备entity,数据以实体的方式存储，也就是键值对
 		UrlEncodedFormEntity entity = null;
-		
+
 		try {
 			entity = new UrlEncodedFormEntity(list,"utf-8");
 			//POST请求设置实体
@@ -101,14 +100,16 @@ public class HttpClientUtils {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		
+
 		//执行请求并判断请求结果
-		result = getResultString(httpClient, httpPost, httpEntity, result);
+		result = getResultString(httpClient, httpPost, httpEntity);
+		System.out.println(result);
 		return result;
 	}
 	
 	//公共代码抽取出来。执行请求并拿到响应结果字符串
-	private static String getResultString(HttpClient httpClient, HttpUriRequest httpUriRequest, HttpEntity httpEntity, String result) {
+	private static String getResultString(HttpClient httpClient, HttpUriRequest httpUriRequest, HttpEntity httpEntity) {
+		String result = "";
 		HttpResponse httpResponse;
 		try {
 			httpResponse = httpClient.execute(httpUriRequest);
@@ -138,6 +139,5 @@ public class HttpClientUtils {
 			doGet(url,params);
 		}
 	}
-	
 
 }
