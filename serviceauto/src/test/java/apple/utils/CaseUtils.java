@@ -35,6 +35,7 @@ public class CaseUtils {
 				String cellName = cellNames[j];
 				String methodName = "get" + cellName;
 				try {
+					//反射调用GET方法，拿到对应属性的值
 					Class clazz = Case.class;
 					Method method = clazz.getMethod(methodName);
 					String value = (String) method.invoke(cs);
