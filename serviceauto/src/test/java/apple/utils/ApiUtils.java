@@ -10,7 +10,7 @@ public class ApiUtils {
 	public static List<Api> apiList = new ArrayList<Api>();
 	static{
 	
-//		apiList = ExcelUtils.load("src/test/resources/servicecasesv3.xlsx","接口信息");
+		ExcelUtils.load("src/test/resources/servicecasesv3.xlsx","接口信息",Api.class);
 	
 	}
 }

@@ -12,7 +12,7 @@ public class CaseUtils {
 	public static List<Case> caseList = new ArrayList<Case>();
 	static{
 		//将所有用例数据解析封装到Case
-		caseList = ExcelUtils.load("src/test/resources/servicecasesv3.xlsx","用例");
+		ExcelUtils.load("src/test/resources/servicecasesv3.xlsx","用例",Case.class);
 	}
 	
 	//拿到对应接口的用例
@@ -27,6 +27,7 @@ public class CaseUtils {
 		}
 		//定义一个二维数组，接收方法返回值
 		Object[][] datas = new Object[list.size()][cellNames.length];
+		Class clazz = Case.class;
 		//遍历list
 		for (int i = 0;i < list.size(); i++){
 			Case cs = list.get(i);
@@ -36,7 +37,6 @@ public class CaseUtils {
 				String methodName = "get" + cellName;
 				try {
 					//反射调用GET方法，拿到对应属性的值
-					Class clazz = Case.class;
 					Method method = clazz.getMethod(methodName);
 					String value = (String) method.invoke(cs);
 					datas[i][j] = value;
@@ -44,7 +44,6 @@ public class CaseUtils {
 					e.printStackTrace();
 				}
 			}
-			
 		}
 		return datas;
 	}

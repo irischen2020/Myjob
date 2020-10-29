@@ -1,5 +1,6 @@
 package apple.utils;
 
+import apple.pojo.Api;
 import apple.pojo.Case;
 import org.apache.poi.ss.usermodel.*;
 
@@ -70,14 +71,58 @@ public class ExcelUtils {
 		}
 		return datas;
 	}
+	//解析EXCEL文件，传入EXCEL路径和表单名称
+//	public static void load(String excelPath, String sheetName) {
+//		//获取类的字节码文件
+//		Class clazz = Case.class;
+//		try {
+//			Workbook workbook = WorkbookFactory.create(new File(excelPath));
+//			Sheet sheet = workbook.getSheet(sheetName);
+//			//通过反射封装对象
+//			//获取第一行标题行，拿到列名，等同于拿到了方法名，存入数组
+//			Row titleRow = sheet.getRow(0);
+//			//获取到列的索引+1
+//			int cellNum = titleRow.getLastCellNum();
+//			String[] fields = new String[cellNum];
+//			for (int i  =0;i < cellNum; i++){
+//				Cell titleCell = titleRow.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+//				titleCell.setCellType(CellType.STRING);
+//				String title = titleCell.getStringCellValue();
+//				title = title.substring(0,title.indexOf("("));
+//				fields[i] = title;
+//			}
+//			//获取最后一行的行号
+//			int rowNum = sheet.getLastRowNum();
+//			//循环行,循环处理每个数据行
+//			for (int i = 1;i <= rowNum; i++){
+//				Row row = sheet.getRow(i);
+//				//通过反射封装
+//				Case cs = (Case) clazz.newInstance();
+//				for (int j = 0;j < cellNum; j++){
+//					//避免拿 到的CELL为空
+//					Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+//					cell.setCellType(CellType.STRING);
+//					String value = cell.getStringCellValue();
+//					 //获取要反射的方法名
+//					 String methodName =  "set" + fields[j];
+//					 //获得方法对象
+//					 Method method = clazz.getMethod(methodName,String.class);
+//					 //反射调用方法
+//					 method.invoke(cs,value);
+//				}
+//				CaseUtils.caseList.add(cs);
+//			}
+//			workbook.close();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
-	public static List<Case> load(String excelPath, String sheetName) {
-		//定义一个LIST来接收读取出来的数据
-		List<Case> list = new ArrayList<Case>();
+	public static void load(String excelPath, String sheetName, Class<?> ssClass) {
+		//参数中有传类的字节码对象 Class<T> apiOrCaseClass
 		try {
 			Workbook workbook = WorkbookFactory.create(new File(excelPath));
 			Sheet sheet = workbook.getSheet(sheetName);
-			Class clazz = Case.class;
 			//通过反射封装对象
 			//获取第一行标题行，拿到列名，等同于拿到了方法名，存入数组
 			Row titleRow = sheet.getRow(0);
@@ -97,35 +142,42 @@ public class ExcelUtils {
 			for (int i = 1;i <= rowNum; i++){
 				Row row = sheet.getRow(i);
 				//通过反射封装
-				Case cs = (Case) clazz.newInstance();
+//				Case cs = (Case) clazz.newInstance();
+				Object obj = ssClass.newInstance();
 				for (int j = 0;j < cellNum; j++){
 					//避免拿 到的CELL为空
 					Cell cell = row.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 					cell.setCellType(CellType.STRING);
 					String value = cell.getStringCellValue();
-					 //获取要反射的方法名
-					 String methodName =  "set" + fields[j];
-					 //获得方法对象
-					 Method method = clazz.getMethod(methodName,String.class);
-					 //反射调用方法
-					 method.invoke(cs,value);
+					//获取要反射的方法名
+					String methodName =  "set" + fields[j];
+					//获得方法对象
+//					Method method = clazz.getMethod(methodName,String.class);
+					Method method =ssClass.getMethod(methodName,String.class);
+					//反射调用方法
+//					method.invoke(cs,value);
+					method.invoke(obj,value);
 				}
-				list.add(cs);
+				if(obj instanceof Case) {
+					CaseUtils.caseList.add((Case) obj);
+				}else if(obj instanceof Api){
+					ApiUtils.apiList.add((Api)obj);
+				}
 			}
 			workbook.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
 	}
+
+
 //	测试代码
-//	public static void main(String[] args) {
-//		List<Case> list = new ArrayList<Case>();
-//		list = load("src/test/resources/servicecasesv3.xlsx","用例");
-//
-//		for (Case cs : list){
-//			System.out.println(cs.toString());
-//		}
-//
-//	}
+	public static void main(String[] args) {
+		
+		load("src/test/resources/servicecasesv3.xlsx","接口信息",Api.class);
+		for (Api api : ApiUtils.apiList){
+			System.out.println(api.toString());
+		}
+
+	}
 }
