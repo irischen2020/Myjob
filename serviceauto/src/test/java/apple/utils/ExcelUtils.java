@@ -35,7 +35,6 @@ public class ExcelUtils {
 					datas[i-1][j-5] = value;
 				}
 			}
-		workbook.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -65,7 +64,6 @@ public class ExcelUtils {
 					datas[i-1][j-5] = value;
 				}
 			}
-		workbook.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -112,7 +110,6 @@ public class ExcelUtils {
 //				}
 //				CaseUtils.caseList.add(cs);
 //			}
-//			workbook.close();
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
@@ -164,7 +161,6 @@ public class ExcelUtils {
 					ApiUtils.apiList.add((Api)obj);
 				}
 			}
-			workbook.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
