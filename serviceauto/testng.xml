@@ -7,7 +7,7 @@
             <!--测试类-->
     <classes>
         <!--单个的测试类定义,类的类路径全名-->
-        <class name="com.services.RegisterCase_v6"></class>
+        <class name="com.services.RegisterCase_v4"></class>
     </classes>
 
     </test>

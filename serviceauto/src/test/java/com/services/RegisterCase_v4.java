@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterCase_v6 {
+public class RegisterCase_v4 {
 	
 //	@Test(dataProvider = "datas")
 //	public void test1(String params){
