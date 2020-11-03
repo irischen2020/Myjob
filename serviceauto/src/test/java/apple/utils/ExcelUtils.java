@@ -4,21 +4,68 @@ import apple.pojo.Api;
 import apple.pojo.Case;
 import org.apache.poi.ss.usermodel.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ExcelUtils {
+	
+	public static Map<String,Integer> rowNumMap = new HashMap<String,Integer>();
+	public static Map<String,Integer> cellNumMap = new HashMap<String,Integer>();
+	static{
+		getRowAndCellNumMap("src/test/resources/servicecasesv5.xlsx","用例");
+	}
+	
+	//获取CASEID和行号之间的映射关系，获取列号和列名之间的映射关系
+	private static void getRowAndCellNumMap(String excelPath, String sheetName) {
+		InputStream inp = null;
+		try {
+			inp = new FileInputStream(new File(excelPath));
+			Workbook workbook = WorkbookFactory.create(inp);
+			Sheet sheet = workbook.getSheet(sheetName);
+			//拿到第一行
+			//sheet.getLastRowNum();//返回最后一行的索引，即比行总数小1
+			//row.getLastCellNum();//返回的是最后一列的列数，即等于总列数
+			Row rowTitle = sheet.getRow(0);
+			int cellNum = rowTitle.getLastCellNum();
+			for (int i = 0; i < cellNum; i++){
+				Cell cell = rowTitle.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+				cell.setCellType(CellType.STRING);
+				String cellName = cell.getStringCellValue();
+				cellNumMap.put(cellName,i);
+			}
+			//遍历所有的行，把行号和第一列的值，存到rowNumMap中。先拿到最后一行的行索引
+			int rowNum = sheet.getLastRowNum();
+			for(int i = 1;i <= rowNum; i++){
+				Row rowi = sheet.getRow(i);
+				Cell cell = rowi.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+				cell.setCellType(CellType.STRING);
+				String caseId = cell.getStringCellValue();
+				rowNumMap.put(caseId,i);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(inp != null){
+				try {
+					inp.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
 	public  static Object[][] getDatas() {
 		String excelPath = "src/test/resources/servicecasesv3.xlsx";
 		//定义一个二维数组
 		Object[][] datas = new Object[6][];
 		String value = "";
+		InputStream inp = null;
 		try {
+			inp = new FileInputStream(new File(excelPath));
 			//获取WORKBOOK对象
-			Workbook workbook = WorkbookFactory.create(new File(excelPath));
+			Workbook workbook = WorkbookFactory.create(inp);
 			//获取SHEET对象
 			Sheet sheet = workbook.getSheet("Cases");
 			//获取行
@@ -37,6 +84,14 @@ public class ExcelUtils {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+		}finally {
+			if(inp != null){
+				try {
+					inp.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return datas;
 	}
@@ -45,9 +100,11 @@ public class ExcelUtils {
 				//定义一个二维数组
 		Object[][] datas = new Object[6][];
 		String value = "";
+		InputStream inp = null;
 		try {
+			inp = new FileInputStream(new File(excelPath));
 			//获取WORKBOOK对象
-			Workbook workbook = WorkbookFactory.create(new File(excelPath));
+			Workbook workbook = WorkbookFactory.create(inp);
 			//获取SHEET对象
 			Sheet sheet = workbook.getSheet("Cases");
 			//获取行
@@ -66,6 +123,14 @@ public class ExcelUtils {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+		}finally {
+			if(inp != null){
+				try {
+					inp.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return datas;
 	}
@@ -116,9 +181,11 @@ public class ExcelUtils {
 //	}
 	
 	public static void load(String excelPath, String sheetName, Class<?> ssClass) {
+		InputStream inp = null;
 		//参数中有传类的字节码对象 Class<T> apiOrCaseClass
 		try {
-			Workbook workbook = WorkbookFactory.create(new File(excelPath));
+			inp = new FileInputStream(new File(excelPath));
+			Workbook workbook = WorkbookFactory.create(inp);
 			Sheet sheet = workbook.getSheet(sheetName);
 			//通过反射封装对象
 			//获取第一行标题行，拿到列名，等同于拿到了方法名，存入数组
@@ -163,17 +230,33 @@ public class ExcelUtils {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			if(inp != null){
+				try {
+					inp.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
-
-
+	
 //	测试代码
 	public static void main(String[] args) {
-		
-		load("src/test/resources/servicecasesv3.xlsx","接口信息",Api.class);
-		for (Api api : ApiUtils.apiList){
-			System.out.println(api.toString());
+		//遍历MAP
+		for (String key : rowNumMap.keySet()){
+			System.out.println("caseId:" + key + ",rowNum:" + rowNumMap.get(key));
+		}
+		for (String key : cellNumMap.keySet()){
+			System.out.println("cellName:" + key + ",cellNum:" + cellNumMap.get(key));
 		}
 
+	}
+	
+	public static void writeActualResponse(String caseId,String cellName, String result) {
+		//1、首先要拿到caseId和行号的映射关系，列名和列号的映射关系；
+		//2、写入EXCEL即可
+		
+	
 	}
 }

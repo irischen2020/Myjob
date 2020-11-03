@@ -1,6 +1,5 @@
 package apple.utils;
 
-import com.services.TestServiceDemo;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -130,13 +129,15 @@ public class HttpClientUtils {
 		return result;
 	}
 	
-	public static void doService(String type,String url,Map<String, String> params){
+	public static String doService(String type, String url, Map<String, String> params){
+		String result = "";
 		if(type.equals("get")){
-			doGet(url,params);
+			result = doGet(url,params);
 		}
 		if(type.equals("post")){
-			doGet(url,params);
+			result = doGet(url,params);
 		}
+		return result;
 	}
 
 }
