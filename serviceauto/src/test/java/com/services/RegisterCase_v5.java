@@ -37,9 +37,10 @@ public class RegisterCase_v5 {
 		Map<String,String> map = new HashMap<String,String>();
 		map = (Map<String, String>) JSONObject.parse(params);
 		
-		//请求
+		//执行请求
 		String actualResponseData = HttpClientUtils.doService(type,url,map);
-		ExcelUtils.writeActualResponse(caseId,"ActualResponseData",actualResponseData);
+		ExcelUtils.writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例",caseId,"ActualResponseData",actualResponseData);
+		
 	}
 	
 	@DataProvider

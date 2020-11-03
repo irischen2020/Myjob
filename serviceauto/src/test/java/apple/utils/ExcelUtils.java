@@ -16,7 +16,12 @@ public class ExcelUtils {
 		getRowAndCellNumMap("src/test/resources/servicecasesv5.xlsx","用例");
 	}
 	
-	//获取CASEID和行号之间的映射关系，获取列号和列名之间的映射关系
+	/**
+	 * 获取CASEID和行号之间的映射关系，获取列号和列名之间的映射关系
+	 * @param excelPath
+	 * @param sheetName
+	 */
+	
 	private static void getRowAndCellNumMap(String excelPath, String sheetName) {
 		InputStream inp = null;
 		try {
@@ -32,6 +37,7 @@ public class ExcelUtils {
 				Cell cell = rowTitle.getCell(i, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 				cell.setCellType(CellType.STRING);
 				String cellName = cell.getStringCellValue();
+				cellName = cellName.substring(0,cellName.indexOf("("));
 				cellNumMap.put(cellName,i);
 			}
 			//遍历所有的行，把行号和第一列的值，存到rowNumMap中。先拿到最后一行的行索引
@@ -96,6 +102,11 @@ public class ExcelUtils {
 		return datas;
 	}
 	
+	/**
+	 *
+	 * @param excelPath EXCEL路径
+	 * @return
+	 */
 	public  static Object[][] getDatas2(String excelPath) {
 				//定义一个二维数组
 		Object[][] datas = new Object[6][];
@@ -106,7 +117,7 @@ public class ExcelUtils {
 			//获取WORKBOOK对象
 			Workbook workbook = WorkbookFactory.create(inp);
 			//获取SHEET对象
-			Sheet sheet = workbook.getSheet("Cases");
+			Sheet sheet = workbook.getSheet("用例");
 			//获取行
 			for (int i = 1;i <= 6; i++ ){
 				//获取行
@@ -180,6 +191,14 @@ public class ExcelUtils {
 //		}
 //	}
 	
+	/**
+	 *
+	 * @param excelPath EXCEL路径名
+	 * @param sheetName EXCEL表单名
+	 * @param ssClass 传入的字节码对象
+	 *                将读取的EXCEL里面的每一行数据，当作一个对象。
+	 *                用于读取用例数据对象，接口信息数据对象
+	 */
 	public static void load(String excelPath, String sheetName, Class<?> ssClass) {
 		InputStream inp = null;
 		//参数中有传类的字节码对象 Class<T> apiOrCaseClass
@@ -241,6 +260,15 @@ public class ExcelUtils {
 		}
 	}
 	
+	
+	/**
+	 *单条回写数据
+	 * @param excelPath 读写的EXCEL路径
+	 * @param sheetName 读写的EXCEL表单名称
+	 * @param caseId    表单里面的caseId
+	 * @param cellName  表单里面的列名
+	 * @param result    需要回写的结果数据
+	 */
 	public static void writeActualResponse(String excelPath,String sheetName,String caseId,String cellName,String result) {
 		//1、首先要拿到caseId和行号的映射关系，列名和列号的映射关系；
 		int rowNum = rowNumMap.get(caseId);
@@ -256,25 +284,22 @@ public class ExcelUtils {
 			Cell cell = row.getCell(cellNum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 			cell.setCellType(CellType.STRING);
 			cell.setCellValue(result);
+			oup = new FileOutputStream(new File(excelPath));
 			workbook.write(oup);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			try {
 			if(inp != null){
-				try {
-					inp.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				inp.close();
 			}
-			if (oup != null){
-				try {
-					oup.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+			if (oup != null) {
+				oup.close();
 			}
+			}catch (IOException e) {
+				e.printStackTrace();
+				}
 		}
 	}
 	
@@ -288,6 +313,5 @@ public class ExcelUtils {
 //		for (String key : cellNumMap.keySet()){
 //			System.out.println("cellName:" + key + ",cellNum:" + cellNumMap.get(key));
 //		}
-		writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例","1","ActualResponseData","testtest");
 	}
 }
