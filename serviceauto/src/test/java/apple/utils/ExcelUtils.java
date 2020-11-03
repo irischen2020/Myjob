@@ -241,22 +241,53 @@ public class ExcelUtils {
 		}
 	}
 	
-//	测试代码
-	public static void main(String[] args) {
-		//遍历MAP
-		for (String key : rowNumMap.keySet()){
-			System.out.println("caseId:" + key + ",rowNum:" + rowNumMap.get(key));
+	public static void writeActualResponse(String excelPath,String sheetName,String caseId,String cellName,String result) {
+		//1、首先要拿到caseId和行号的映射关系，列名和列号的映射关系；
+		int rowNum = rowNumMap.get(caseId);
+		int cellNum = cellNumMap.get(cellName);
+		//2、写入EXCEL即可
+		InputStream inp = null;
+		OutputStream oup = null;
+		try {
+			inp = new FileInputStream(new File(excelPath));
+			Workbook workbook = WorkbookFactory.create(inp);
+			Sheet sheet = workbook.getSheet(sheetName);
+			Row row = sheet.getRow(rowNum);
+			Cell cell = row.getCell(cellNum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+			cell.setCellType(CellType.STRING);
+			cell.setCellValue(result);
+			workbook.write(oup);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(inp != null){
+				try {
+					inp.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (oup != null){
+				try {
+					oup.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		for (String key : cellNumMap.keySet()){
-			System.out.println("cellName:" + key + ",cellNum:" + cellNumMap.get(key));
-		}
-
 	}
 	
-	public static void writeActualResponse(String caseId,String cellName, String result) {
-		//1、首先要拿到caseId和行号的映射关系，列名和列号的映射关系；
-		//2、写入EXCEL即可
-		
 	
+	//	测试代码
+	public static void main(String[] args) {
+		//遍历MAP
+//		for (String key : rowNumMap.keySet()){
+//			System.out.println("caseId:" + key + ",rowNum:" + rowNumMap.get(key));
+//		}
+//		for (String key : cellNumMap.keySet()){
+//			System.out.println("cellName:" + key + ",cellNum:" + cellNumMap.get(key));
+//		}
+		writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例","1","ActualResponseData","testtest");
 	}
 }
