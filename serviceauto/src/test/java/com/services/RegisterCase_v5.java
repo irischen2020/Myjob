@@ -40,10 +40,7 @@ public class RegisterCase_v5 {
 //		ExcelUtils.writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例",caseId,"ActualResponseData",actualResponseData);
 		
 		String actualResponseData = HttpClientUtils.doService(type,url,map);
-		Result result = new Result();
-		result.setCaseId(caseId);
-		result.setCellName("ActualResponseData");
-		result.setActualResponseData(actualResponseData);
+		Result result = new Result("用例",caseId,"ActualResponseData",actualResponseData);
 		ResultUtils.resultList.add(result);
 	}
 	
