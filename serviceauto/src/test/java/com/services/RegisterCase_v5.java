@@ -1,10 +1,8 @@
 package com.services;
 
 import apple.pojo.Api;
-import apple.utils.ApiUtils;
-import apple.utils.CaseUtils;
-import apple.utils.ExcelUtils;
-import apple.utils.HttpClientUtils;
+import apple.pojo.Result;
+import apple.utils.*;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -29,7 +27,7 @@ public class RegisterCase_v5 {
 //	}
 	//type,url,map都从EXCEL中获取
 	@Test(dataProvider = "datas")
-	public void test1(String caseId,String apiId,String params){
+	public void test(String caseId,String apiId,String params){
 		String url = ApiUtils.getUrlByApiId(apiId);
 		String type = ApiUtils.getTypeByApiId(apiId);
 		
@@ -37,10 +35,16 @@ public class RegisterCase_v5 {
 		Map<String,String> map = new HashMap<String,String>();
 		map = (Map<String, String>) JSONObject.parse(params);
 		
-		//执行请求
-		String actualResponseData = HttpClientUtils.doService(type,url,map);
-		ExcelUtils.writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例",caseId,"ActualResponseData",actualResponseData);
+		//执行请求，将每次请求的数据回写到EXCEL，多次读写EXCEL，造成效率低下。换一种方式，批量回写数据。
+//		String actualResponseData = HttpClientUtils.doService(type,url,map);
+//		ExcelUtils.writeActualResponse("src/test/resources/servicecasesv5.xlsx","用例",caseId,"ActualResponseData",actualResponseData);
 		
+		String actualResponseData = HttpClientUtils.doService(type,url,map);
+		Result result = new Result();
+		result.setCaseId(caseId);
+		result.setCellName("ActualResponseData");
+		result.setActualResponseData(actualResponseData);
+		ResultUtils.resultList.add(result);
 	}
 	
 	@DataProvider
