@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+import static apple.utils.ExcelUtils.batchWriteActualResponse;
+
 public class BaseCase {
 	//type,url,map都从EXCEL中获取
 	@Test(dataProvider = "datas")
@@ -34,6 +36,6 @@ public class BaseCase {
 	@AfterTest()
 	public void afterTest(){
 		//解析resultList中的数据，将数据批量回写到EXCEL里面
-		
+		batchWriteActualResponse("src/test/resources/servicecasesv5.xlsx",ResultUtils.resultList);
 	}
 }
