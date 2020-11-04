@@ -35,8 +35,8 @@ public class BaseCase {
 		Result result = new Result("用例",caseId,"ActualResponseData",actualResponseData);
 		ResultUtils.resultList.add(result);
 	}
-	@AfterSuite()
-	public void afterTest(){
+	@AfterSuite
+	public void batchWriteBackDatas(){
 		//解析resultList中的数据，将数据批量回写到EXCEL里面
 		ExcelUtils.batchWriteActualResponse("src/test/resources/servicecasesv5.xlsx");
 	}

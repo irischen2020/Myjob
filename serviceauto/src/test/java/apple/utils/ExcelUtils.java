@@ -329,9 +329,10 @@ public class ExcelUtils {
 			
 			cell.setCellType(CellType.STRING);
 			cell.setCellValue(result.getActualResponseData());
+			System.out.println(result.getActualResponseData());
+		}
 			oup = new FileOutputStream(new File(excelPath));
 			workbook.write(oup);
-		}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -357,5 +358,10 @@ public class ExcelUtils {
 //		for (String key : cellNumMap.keySet()){
 //			System.out.println("cellName:" + key + ",cellNum:" + cellNumMap.get(key));
 //		}
+		//遍历LIST
+		for (Result result : ResultUtils.resultList)
+		{
+			System.out.println(result);
+		}
 	}
 }
