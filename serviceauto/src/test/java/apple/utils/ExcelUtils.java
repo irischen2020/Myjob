@@ -305,30 +305,33 @@ public class ExcelUtils {
 	}
 	
 	/**
-	 * 批量回写数据,数据放在resultList里面
+	 * 批量回写数据,数据在resultList里面
 	 * @param excelPath
 	 */
-	public static void batchWriteActualResponse(String excelPath,List<Result> list) {
-		//遍历list
-		for (int i = 0; i<list.size(); i++){
-			Result result = list.get(i);
-		//1、首先要拿到caseId和行号的映射关系，列名和列号的映射关系；
-		int rowNum = rowNumMap.get(result.getCaseId());
-		int cellNum = cellNumMap.get(result.getCellName());
+	public static void batchWriteActualResponse(String excelPath) {
 		//2、写入EXCEL即可
 		InputStream inp = null;
 		OutputStream oup = null;
 		try {
 			inp = new FileInputStream(new File(excelPath));
 			Workbook workbook = WorkbookFactory.create(inp);
+			
+		//遍历list
+		for (int i = 0; i<ResultUtils.resultList.size(); i++) {
+			Result result = ResultUtils.resultList.get(i);
 			Sheet sheet = workbook.getSheet(result.getSheetName());
+			
+			//拿到caseId和行号的映射关系，列名和列号的映射关系；
+			int rowNum = rowNumMap.get(result.getCaseId());
+			int cellNum = cellNumMap.get(result.getCellName());
 			Row row = sheet.getRow(rowNum);
 			Cell cell = row.getCell(cellNum, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+			
 			cell.setCellType(CellType.STRING);
 			cell.setCellValue(result.getActualResponseData());
 			oup = new FileOutputStream(new File(excelPath));
 			workbook.write(oup);
-			
+		}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -344,7 +347,7 @@ public class ExcelUtils {
 			}
 		}
 		}
-	}
+	
 	//	测试代码
 	public static void main(String[] args) {
 		//遍历MAP

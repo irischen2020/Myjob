@@ -2,10 +2,12 @@ package com.services;
 
 import apple.pojo.Result;
 import apple.utils.ApiUtils;
+import apple.utils.ExcelUtils;
 import apple.utils.HttpClientUtils;
 import apple.utils.ResultUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.annotation.After;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -33,9 +35,9 @@ public class BaseCase {
 		Result result = new Result("用例",caseId,"ActualResponseData",actualResponseData);
 		ResultUtils.resultList.add(result);
 	}
-	@AfterTest()
+	@AfterSuite()
 	public void afterTest(){
 		//解析resultList中的数据，将数据批量回写到EXCEL里面
-		batchWriteActualResponse("src/test/resources/servicecasesv5.xlsx",ResultUtils.resultList);
+		ExcelUtils.batchWriteActualResponse("src/test/resources/servicecasesv5.xlsx");
 	}
 }
