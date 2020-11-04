@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Result {
+	private String sheetName;
 	private String caseId;
 	private String cellName;
 	private String actualResponseData;
