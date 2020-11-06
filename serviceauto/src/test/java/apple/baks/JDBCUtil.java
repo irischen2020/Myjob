@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * JDBC操作数据库
+ */
 public class JDBCUtil {
 	
 	//静态代码块，拿到配置文件中的配置信息
@@ -15,8 +18,12 @@ public class JDBCUtil {
 		prop = FileUtil.readProp("src/test/resources/jdbc.properties");
 
 	}
-	/*
 	
+	/**
+	 *
+	 * @param sql
+	 * @param values
+	 * @return
 	 */
 	public static Map<String,Object> query(String sql, Object ... values){
 		Map<String,Object> columnLabelandValues = null;
