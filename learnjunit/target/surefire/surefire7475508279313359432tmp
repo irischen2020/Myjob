@@ -1,0 +1,7 @@
+#surefire
+#Fri Sep 25 09:17:20 CST 2020
+user.dir=F\:\\Myjob\\learnjunit
+maven.repo.local=F\:\\maven_repository
+idea.version=2017.2.7
+localRepository=F\:\\maven_repository
+basedir=F\:\\Myjob\\learnjunit

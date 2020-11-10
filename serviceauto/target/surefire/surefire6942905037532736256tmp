@@ -1,0 +1,5 @@
+#surefire
+#Fri Nov 06 15:07:37 CST 2020
+user.dir=F\:\\Myjob\\serviceauto
+localRepository=F\:\\maven_repository
+basedir=F\:\\Myjob\\serviceauto

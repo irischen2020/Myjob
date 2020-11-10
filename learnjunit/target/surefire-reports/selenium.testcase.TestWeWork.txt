@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: selenium.testcase.TestWeWork
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec <<< FAILURE!
+selenium.testcase.TestWeWork.testImport()  Time elapsed: 0.007 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at selenium.testcase.TestWeWork.testImport(TestWeWork.java:103)
+
+selenium.testcase.TestWeWork.testMessageSend()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at selenium.testcase.TestWeWork.testMessageSend(TestWeWork.java:111)
+
+selenium.testcase.TestWeWork.testGetList()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at selenium.testcase.TestWeWork.testGetList(TestWeWork.java:117)
+
+selenium.testcase.TestWeWork.testDelete()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at selenium.testcase.TestWeWork.testDelete(TestWeWork.java:96)
+
