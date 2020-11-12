@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--MYBATIS的主配置文件-->
 <configuration>
+    <!--配置 properties,可以在这里直接配置，也可以通过属性引用外部配置文件信息-->
+    <properties resource="jdbc.properties">
+    </properties>
+
     <!--配置环境-->
     <environments default="mysql">
         <!--配置MYSQL的环境-->
@@ -13,16 +17,16 @@
             <!--配置数据源：连接池-->
             <dataSource type="POOLED">
                 <!--配置连接数据库的基本信息-->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/...."/>
-                <property name="username" value="root"/>
-                <property name="password" value="1234"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
 
 <!--指定映射配置文件的位置，映射配置文件指的是每个DAO独立的配置文件-->
     <mappers>
-        <mapper resource="com/cc/dao/IUserMapper.xml"></mapper>
+        <mapper resource="com/cc/dao/IUserDao.xml"></mapper>
     </mappers>
 </configuration>
