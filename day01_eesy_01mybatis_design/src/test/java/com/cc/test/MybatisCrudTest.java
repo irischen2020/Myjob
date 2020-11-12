@@ -15,16 +15,15 @@ import java.util.List;
 
 public class MybatisCrudTest {
 
-	private Reader reader;
+	private InputStream in;
 	private SqlSession sqlSession;
 	
 	@Before
-	public void before() throws IOException{
+	public void before() throws Exception{
 		//1、读取配置文件，生成字节输入流
-//		InputStream in = new FileInputStream("sqlMapperConfig.xml");
-		reader = Resources.getResourceAsReader("sqlMapperConfig.xml");
+		in = Resources.getResourceAsStream("sqlMapperConfig.xml");
 		//2、获取SqlSessionFactory
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
 		//3、获取SqlSession对象
 		sqlSession = sqlSessionFactory.openSession();
 	}
@@ -43,6 +42,6 @@ public class MybatisCrudTest {
 	public void after() throws IOException {
 		//6、释放资源
 		sqlSession.close();
-		reader.close();
+		in.close();
 	}
 }
