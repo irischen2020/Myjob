@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5678cd57-cd1f-4a10-b903-089b3536f4e3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/cc/dao/IUserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/cc/dao/IUserDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,8 +75,8 @@
       <file leaf-file-name="MybatisCrudTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="18" column="69" lean-forward="false" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+            <state relative-caret-position="268">
+              <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,12 +121,12 @@
         <option value="$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar!/org/apache/ibatis/parsing/XPathParser.class" />
         <option value="$PROJECT_DIR$/src/main/resources/com/cc/dao/IUserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cc/dao/IUserDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cc/test/MybatisTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sqlMapperConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/com/cc/dao/IUserDao.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java" />
       </list>
     </option>
   </component>
@@ -164,8 +162,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="357" />
-    <option name="y" value="169" />
+    <option name="x" value="557" />
+    <option name="y" value="151" />
     <option name="width" value="1518" />
     <option name="height" value="766" />
   </component>
@@ -302,6 +300,31 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.MybatisCrudTest.testFindAll">
+    <configuration name="MybatisCrudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.cc.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="day01_eesy_01mybatis_design" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.cc.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cc.test.MybatisCrudTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="MybatisCrudTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -408,9 +431,14 @@
       <properties />
       <listeners />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MybatisCrudTest.testFindAll" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MybatisCrudTest" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="JUnit.MybatisCrudTest.testFindAll" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MybatisCrudTest" />
       </list>
     </recent_temporary>
   </component>
@@ -425,7 +453,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605000505143</updated>
       <workItem from="1605000510704" duration="620000" />
-      <workItem from="1605144517851" duration="8877000" />
+      <workItem from="1605144517851" duration="9231000" />
     </task>
     <task id="LOCAL-00001" summary="day01_easy_01mybatis_design">
       <created>1605000711787</created>
@@ -455,18 +483,19 @@
       <option name="project" value="LOCAL" />
       <updated>1605168795657</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mybatis-crud">
+      <created>1605170095581</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605170095581</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 15h 57m 28s.xml">
-      <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 01m 25s.xml">
-      <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 03m 06s.xml">
-      <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
+    <history-entry file="MybatisCrudTest - 2020.11.12 at 16h 39m 41s.xml">
+      <configuration name="MybatisCrudTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 03m 52s.xml">
       <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
@@ -489,12 +518,18 @@
     <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 33m 56s.xml">
       <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 39m 55s.xml">
+      <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MybatisCrudTest_testFindAll - 2020.11.12 at 16h 40m 30s.xml">
+      <configuration name="MybatisCrudTest.testFindAll" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9497000" />
+    <option name="totallyTimeSpent" value="9851000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="357" y="169" width="1518" height="766" extended-state="0" />
+    <frame x="557" y="151" width="1518" height="766" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -505,11 +540,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10631002" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36867088" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4699367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16872428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14266118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -645,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cc/test/MybatisCrudTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="18" column="69" lean-forward="false" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+        <state relative-caret-position="268">
+          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
