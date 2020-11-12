@@ -8,8 +8,8 @@
     
     <!--配置查询所有-->
     <!--id属性的取值必须是IUserDao接口的方法名-->
-    <select id="findAll" resultType="com.cc.domain.User">
-        select * from user;
+    <select id="findALL" resultType="com.cc.domain.User">
+        select * from user
     </select>
 
     <!--保存用户-->
