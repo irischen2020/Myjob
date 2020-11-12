@@ -1,4 +1,4 @@
-mybatis的环境搭建：
+1、mybatis的环境搭建：
     第一步：创建MAVEN工程；
     第二步：创建实体类和DAO的接口；User IUserDao
     第三步：创建MYBATIS的主配置文件：sqlMapConfig.xml;
@@ -57,7 +57,7 @@ IUserMapper.xml文件：
 
 
 
-mybais的入门案例：
+2、mybais的入门案例：
 		//1、读取配置文件
 		InputStream in = Resources.getResourceAsStream("sqlMapConfig.xml");
 		//2、创建SqlSessionFactory工厂
@@ -72,3 +72,25 @@ mybais的入门案例：
 		//6、释放资源
 		sqlSession.close();
 		in.close();
+
+
+3、mybatis中的连接池以及事务控制
+    mybatis中连接池的使用:提供了3种方式的配置，
+
+
+    mybatis事务控制的分析
+
+
+
+4、mybatis基于XML配置的动态SQL语句
+    mappers配置文件中的几个标签：
+        <if>
+        <where>
+        <foreach>
+        <sql>
+
+5、mybatis中的多表操作
+    一对多
+    一对一
+    多对多
+
