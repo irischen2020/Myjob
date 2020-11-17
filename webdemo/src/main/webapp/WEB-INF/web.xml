@@ -15,4 +15,15 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/MyServlet</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>MyServlet2</servlet-name>
+        <servlet-class>com.atguigu.servlet.MyServlet2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/MyServlet2</url-pattern>
+    </servlet-mapping>
 </web-app>
