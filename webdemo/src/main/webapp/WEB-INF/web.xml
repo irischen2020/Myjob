@@ -6,7 +6,6 @@
     <listener>
         <listener-class>com.atguigu.listerner.MyServletContextListener</listener-class>
     </listener>
-
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>com.atguigu.servlet.MyServlet</servlet-class>
