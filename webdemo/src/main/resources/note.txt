@@ -3,3 +3,4 @@
     服务器启动：做一些项目的预初始化操作；
     服务器停止：做一些善后清理工作
 2、HttpSessionBindingListener：监听某个对象绑定到session域中；
+
