@@ -21,7 +21,10 @@ public class MyServletContextListener implements ServletContextListener{
 	
 	public void contextInitialized(ServletContextEvent sce) {
 		ServletContext servletContext = sce.getServletContext();
-		System.out.println("contextInitialized……");
+		System.out.println("contextInitialized……" +servletContext);
+		
+		//将项目整个要用的所有数据初始化.拿到项目路径
+		servletContext.setAttribute("ctp",servletContext.getContextPath());
 		
 	}
 	
