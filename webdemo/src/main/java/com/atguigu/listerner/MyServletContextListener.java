@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSessionBindingEvent;
 
 /**监听器如何工作
  * 1、编写一个监听ServletContext生命周期的Listener,实现Listener接口
- * 2、在当前项目中注册(web.xml)使用
+ * 2、在当前项目中注册(web.xml)使用  这个重要：监听服务器启动停止
  */
 public class MyServletContextListener implements ServletContextListener{
 	

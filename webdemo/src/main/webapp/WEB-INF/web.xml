@@ -9,6 +9,9 @@
     <listener>
         <listener-class>com.atguigu.listerner.MySessionLifeCycleListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.atguigu.listerner.MyHttpSessionBindingListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>com.atguigu.servlet.MyServlet</servlet-class>

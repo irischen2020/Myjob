@@ -34,15 +34,14 @@ public class MySessionLifeCycleListener implements
 	// -------------------------------------------------------
 	
 	public void attributeAdded(HttpSessionBindingEvent sbe) {
-      /* This method is called when an attribute 
-         is added to a session.
-      */
+		System.out.println("session中添加了"+sbe.getValue()+"属性");
 	}
 	
 	public void attributeRemoved(HttpSessionBindingEvent sbe) {
       /* This method is called when an attribute
          is removed from a session.
       */
+		System.out.println("session中移除了"+sbe.getValue()+"属性");
 	}
 	
 	public void attributeReplaced(HttpSessionBindingEvent sbe) {
