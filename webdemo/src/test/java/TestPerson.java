@@ -1,5 +1,6 @@
 import com.atguigu.bean.Person;
 import com.atguigu.dao.BookDao;
+import com.atguigu.servlet.BookServlet;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -25,5 +26,10 @@ public class TestPerson {
 	public void test03(){
 		BookDao  bookDao = (BookDao) ioc.getBean("bookDao");
 		System.out.println(bookDao);
+	}
+	@Test
+	public void test04(){
+		BookServlet bookServlet = (BookServlet) ioc.getBean("bookServlet");
+		bookServlet.doGet();
 	}
 }
