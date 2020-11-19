@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--实验15：通过注解分别创建DAO,SERVICE,CONTROLLER
+    通过给BEAN上添加某些注解，可以快速地将BEAN加入到IOC容器中.
+    某个类上添加上任何一个注解都能快速地将这个类加入到IOC窗口的管理中：
+    SPING有四个注解：
+    @Controller：控制器，推荐给控制器层的组件加这个注解（servlet包下的这些）
+    @Service：业务逻辑，推荐业务逻辑层的组件添加这个注解(service包下的这些)
+    @Respository:给数据库层(持久化层，DAO层）的组件添加这个注解
+    @Component：给不属于以上几层的组件添加这个注解
+
+    使用注解将组件快速地加入到容器中需要几步：
+    1、给要添加的组件上标四个注解中的任何一个；
+    2、告诉SPRING,自动扫描加了注解的组件，依赖context名称空间
+    3、一定要导入AOP包，支持加注解模式的。
+    代码中使用时，自动装配的这些类，ID为类名的首字母小写
+    -->
+    <!--自动进行组件扫描-会把基础包及他下面所有的包的所有加了注解的类，扫描进IOC容器-->
+    <context:component-scan base-package="com.atguigu"></context:component-scan>
+
+</beans>
