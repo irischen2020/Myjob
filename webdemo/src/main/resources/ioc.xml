@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册一个Person对象，SPRING会自动创建这个Person对象。一个BEAN标签可以注册一个类-->
+    <!--class:写要注册的组件的全类名
+    id:这个对象的唯一标识-->
+    <bean id="person01" class="com.atguigu.bean.Person">
+
+    </bean>
+</beans>
