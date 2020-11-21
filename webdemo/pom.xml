@@ -74,7 +74,10 @@
             <artifactId>spring-aop</artifactId>
             <version>5.2.1.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId></groupId>
+            <artifactId>spring-jdbc-4.0.0</artifactId>
+        </dependency>
 
 
 
