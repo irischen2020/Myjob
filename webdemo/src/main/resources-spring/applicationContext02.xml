@@ -16,4 +16,11 @@
         <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
         <property name="driverClass" value="${jdbc.driverClass}"></property>
     </bean>
+
+    <!--SPING提供了一个类JdbcTemplate，我们用它来操作数据库：
+            POM里面加上SPRING的数据库模块依赖-->
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+    </bean>
 </beans>

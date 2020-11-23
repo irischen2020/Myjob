@@ -1,0 +1,36 @@
+面向切面编程：
+基于注解的AOP步骤：
+    1）将目标类和切面类（封装了通知方法即在目标方法前后执行的方法）加入到IOC容器中；
+
+    2）还应该告诉SPRING到底哪个是切面类@Aspect
+    @Aspect
+
+    3) 告诉SPRING，切面类里面的每一个方法，都是何时何地运行；即在切面类的方法上面 ，写上切入点表达式
+    @Before("execution(public int com.atguigu.aop.MyMathCalculator.*(int,int))")
+
+    4）在application.xml里面开启注解的AOP功能
+
+
+基于配置的AOP：
+
+
+
+事务：
+    操作数据库；
+    SPRING提供了JdbcTemplate能快捷地操作数据库；
+    JdbcTemplate和QueryRunner类似。
+
+    <!--    声明式事务控制-->
+    <!--    1、配置事务管理器(切面)让其进行事务控制-->
+        <bean id="transactionManager" class="org.springframework.jdbc.datasource.....">
+    <!--        控制住数据源-->
+            <property name="dataSource" ref="dataSource"></property>
+        </bean>
+
+    <!--    2、开启基于注解的事务控制模式，依赖tx名称空间-->
+        <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--    3、给事务方法加注解。在代码里面-->
+
+
+
