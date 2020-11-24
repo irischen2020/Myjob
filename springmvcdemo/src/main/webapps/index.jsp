@@ -25,21 +25,21 @@
     2、如何发起其它形式请求？
         第一：先创建一个POST类型的表单；第二：表单项中携带一个_method参数；第三：--%>
 
-<a href="/book/1">查询图书</a>
+<%--<a href="/book/1">查询图书</a>--%>
 
-<form action="book" method="post">
-    <input type="submit" value="添加1号图书"/>
-</form><br/>
+<%--<form action="book" method="post">--%>
+    <%--<input type="submit" value="添加1号图书"/>--%>
+<%--</form><br/>--%>
 
-<form action="book/1" method="post">
-    <input name="_method" value="delete"/>
-    <input type="submit" value="删除1号图书"/>
-</form>
+<%--<form action="book/1" method="post">--%>
+    <%--<input name="_method" value="delete"/>--%>
+    <%--<input type="submit" value="删除1号图书"/>--%>
+<%--</form>--%>
 
-<form action="book/1" method="post">
-    <input name="_method" value="put"/>
-    <input type="submit" value="更新1号图书"/>
-</form>
+<%--<form action="book/1" method="post">--%>
+    <%--<input name="_method" value="put"/>--%>
+    <%--<input type="submit" value="更新1号图书"/>--%>
+<%--</form>--%>
 
 <a href="hello">hello</a>
 

@@ -10,7 +10,7 @@ public class HelloController {
 	@RequestMapping("/hello")
 	public String hello(){
 		
-		System.out.println("handle01.....");
-		return "success.jsp";
+		System.out.println("hello world");
+		return "forward:/hello.jsp";
 	}
 }
