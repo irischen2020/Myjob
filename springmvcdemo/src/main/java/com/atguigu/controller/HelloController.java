@@ -6,11 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloController {
-	
+//
+//	@RequestMapping("/hello")
+//	public String hello(){
+//
+//		System.out.println("hello world");
+//		return "forward:/hello.jsp";
+//	}
+
 	@RequestMapping("/hello")
 	public String hello(){
-		
-		System.out.println("hello world");
-		return "forward:/hello.jsp";
+		System.out.println("hello.....");
+		return "success";
 	}
 }

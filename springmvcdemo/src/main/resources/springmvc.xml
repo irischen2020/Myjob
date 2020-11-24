@@ -8,7 +8,7 @@
     <!--扫描所有的组件-->
     <context:component-scan base-package="com.atguigu"></context:component-scan>
 
-
+    <!--视图解析器，指定前后缀-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"></property>
         <property name="suffix" value=".jsp"></property>
