@@ -7,6 +7,25 @@
         <element id="directory" name="classes">
           <element id="module-output" name="springmvcdemo" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.5.2" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.0" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.5.2" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.10" />
+          <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.4" />
+          <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.15" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.1.RELEASE" />
+        </element>
       </element>
     </root>
   </artifact>

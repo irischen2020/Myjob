@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 	
 	@RequestMapping("/hello")
-	public void hello(){
+	public String hello(){
 		
 		System.out.println("handle01.....");
-//		return "success.jsp";
+		return "success.jsp";
 	}
 }
